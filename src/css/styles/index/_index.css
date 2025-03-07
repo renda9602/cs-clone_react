@@ -1,0 +1,5087 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@keyframes loadingRotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(72deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(144deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(216deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(288deg);
+  }
+}
+@keyframes loadingColor {
+  0% {
+    fill: #c5c5c5;
+  }
+  25% {
+    fill: #000;
+  }
+  50% {
+    fill: #ffbb4f;
+  }
+  75% {
+    fill: #9060ff;
+  }
+  100% {
+    fill: #437ef7;
+  }
+}
+/*반응형 화면 크기*/
+/*반응형, 브라우저 크기가 320px 이하일때*/
+/*반응형, 브라우저 크기가 450px 이하일때*/
+/*반응형, 브라우저 크기가 540px 이하일때*/
+/*반응형, 브라우저 크기가 640px 이하일때*/
+/*반응형, 브라우저 크기가 830px 이하일때*/
+/*반응형, 브라우저 크기가 768px 이하일때*/
+/*반응형, 브라우저 크기가 950px 이하일때*/
+/*반응형, 브라우저 크기가  1024px 이하일때*/
+/*반응형, 브라우저 크기가 1200px 이하일때*/
+/*반응형, 브라우저 크기가 1400px 이하일때*/
+:root {
+  color-scheme: light only;
+}
+
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background: #fff !important;
+    background-color: #fff !important;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+img,
+fieldset {
+  border: 0;
+}
+
+img {
+  vertical-align: top;
+}
+
+a,
+a:link {
+  text-decoration: none;
+  color: #000;
+}
+
+input,
+select,
+textarea,
+button {
+  vertical-align: middle;
+  border-radius: 0;
+  cursor: pointer;
+  /*ios대응*/
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+select {
+  background: url('https://bodyfriend.speedgabia.com/img/cs/icon/arrow_black_down.svg')
+    no-repeat calc(100% - 10px) center;
+}
+@media (max-width: 540px) {
+  select {
+    background-size: 20px;
+  }
+}
+
+input[type='text']:focus,
+input[type='text']:hover {
+  outline: none;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  cursor: pointer;
+}
+
+input[type='button'] {
+  border: none;
+}
+
+select:disabled {
+  background: url('https://bodyfriend.speedgabia.com/img/cs/icon/arrow_black_down.svg')
+    no-repeat calc(100% - 10px) center #f3f3f3;
+  color: #272d37;
+}
+
+input[type='text']:-moz-read-only,
+textarea:-moz-read-only {
+  background: #f3f3f3;
+  color: #272d37;
+}
+
+input[type='text']:disabled,
+input[type='text']:read-only,
+textarea:read-only,
+textarea:disabled {
+  background: #f3f3f3;
+  color: #272d37;
+}
+
+i,
+em,
+address {
+  font-style: normal;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+}
+
+legend,
+caption {
+  line-height: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  font-size: 0;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+::-moz-placeholder {
+  color: #dbdbdb;
+}
+
+::placeholder {
+  color: #dbdbdb;
+}
+
+/*notosans kr
+Thin 100
+Light 300
+Regular 400
+Medium 500
+Bold 700
+Black 900
+font-family: 'Noto Sans KR', sans-serif;
+*/
+/* bodyfriend (bodyfriend-L, bodyfriend-M, bodyfriend-B) */
+@font-face {
+  font-family: 'bodyfriendL';
+  font-weight: normal;
+  src: url('https://fonts.bodyfriend.co.kr/Bodyfriend/BodyFriend-L.woff2')
+      format('woff2'),
+    url('https://fonts.bodyfriend.co.kr/Bodyfriend/BodyFriend-L.woff')
+      format('woff');
+}
+@font-face {
+  font-family: 'bodyfriendM';
+  font-weight: normal;
+  src: url('https://fonts.bodyfriend.co.kr/Bodyfriend/BodyFriend-M.woff2')
+      format('woff2'),
+    url('https://fonts.bodyfriend.co.kr/Bodyfriend/BodyFriend-M.woff')
+      format('woff');
+}
+@font-face {
+  font-family: 'bodyfriendB';
+  font-weight: normal;
+  src: url('https://fonts.bodyfriend.co.kr/Bodyfriend/BodyFriend-B.woff2')
+      format('woff2'),
+    url('https://fonts.bodyfriend.co.kr/Bodyfriend/BodyFriend-B.woff')
+      format('woff');
+}
+/*body scroll*/
+.scroll-hidden {
+  overflow: hidden;
+}
+
+.scroll-hidden-x {
+  overflow-x: hidden;
+}
+
+.scroll-hidden-y {
+  overflow-y: hidden;
+}
+
+.overflow-auto-x {
+  overflow-x: auto;
+}
+
+.overflow-auto-y {
+  overflow-y: auto;
+}
+
+/*말줄임 */
+.dotdot {
+  display: inline-block;
+  max-width: 95%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 접근성 : 숨김 텍스트 */
+.hdtxt {
+  height: 0;
+  width: 0;
+  font-size: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/*display*/
+.dis-block {
+  display: block !important;
+}
+
+.dis-none {
+  display: none !important;
+}
+
+.dis-flex {
+  display: flex !important;
+}
+
+.dis-flex-space-between {
+  justify-content: space-between;
+}
+
+/*text*/
+.txt-left {
+  text-align: left !important;
+}
+
+.txt-right {
+  text-align: right !important;
+}
+
+.txt-center {
+  text-align: center !important;
+}
+
+/*font*/
+.fontSize12 {
+  font-size: 1.2rem !important;
+}
+
+.fontSize14 {
+  font-size: 1.4rem !important;
+}
+
+.fontSize16 {
+  font-size: 1.6rem !important;
+}
+
+.fontSize20 {
+  font-size: 2rem !important;
+}
+
+.fontBold {
+  font-weight: 700 !important;
+}
+
+/*float*/
+.floatL {
+  float: left;
+}
+
+.floatR {
+  float: right;
+}
+
+/*layout*/
+/*color*/
+.color-black0 {
+  color: #000 !important;
+}
+
+.color-black2 {
+  color: #272d37 !important;
+}
+
+.color-white {
+  color: #fff !important;
+}
+
+.color-primary {
+  color: #437ef7 !important;
+}
+
+.color-secondary {
+  color: #f5faff !important;
+}
+
+.color-red-f0 {
+  color: #f00 !important;
+}
+
+.color-purple-9060ff {
+  color: #9060ff !important;
+}
+
+.color-orange-ffbb4f {
+  color: #ffbb4f !important;
+}
+
+.color-grey-9 {
+  color: #999 !important;
+}
+
+.color-grey-b0 {
+  color: #b0b0b0 !important;
+}
+
+.color-grey-b4 {
+  color: #b4b4b4 !important;
+}
+
+.color-grey-7b {
+  color: #7b7b7b !important;
+}
+
+.color-grey-c5 {
+  color: #c5c5c5 !important;
+}
+
+.color-grey-c9 {
+  color: #c9c9c9 !important;
+}
+
+.color-grey-a4 {
+  color: #a4a4a4 !important;
+}
+
+.color-grey-db {
+  color: #dbdbdb !important;
+}
+
+.color-grey-f3 {
+  color: #f3f3f3 !important;
+}
+
+.color-grey-f5f5f7 {
+  color: #f5f5f7 !important;
+}
+
+.color-grey-bbbcc8 {
+  color: #bbbcc8 !important;
+}
+
+.color-border1 {
+  color: #dae0e6 !important;
+}
+
+/*bg*/
+.bg-color-grey-f5f5f7 {
+  background-color: #f5f5f7 !important;
+}
+
+/*marget*/
+.mg0 {
+  margin: 0 !important;
+}
+
+.mgt10 {
+  margin-top: 10px !important;
+}
+
+.mgt20 {
+  margin-top: 20px !important;
+}
+
+.mgt40 {
+  margin-top: 40px !important;
+}
+
+.mgt60 {
+  margin-top: 60px !important;
+}
+
+.mgb10 {
+  margin-bottom: 10px !important;
+}
+
+.mgb20 {
+  margin-bottom: 20px !important;
+}
+
+.mgb40 {
+  margin-bottom: 40px !important;
+}
+
+.mgr10 {
+  margin-right: 10px !important;
+}
+
+/*padding*/
+.pd10 {
+  padding: 10px;
+}
+
+.pd20 {
+  padding: 20px;
+}
+
+.pdb40 {
+  padding-bottom: 40px !important;
+}
+
+.pdb60 {
+  padding-bottom: 60px !important;
+}
+
+/*cursor*/
+.cursor-point {
+  cursor: pointer;
+}
+
+/*text-decoration*/
+.text-underline {
+  text-decoration: underline !important;
+}
+
+/*아이콘*/
+.icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+}
+.icon.icon-massage-chair-ai {
+  background-image: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_massage_chair_ai.svg');
+  width: 38px;
+  height: 38px;
+}
+
+/*로딩*/
+.loading-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 9999;
+}
+.loading-wrap.on {
+  display: block;
+}
+.loading-wrap.cls-1 {
+  fill: #000;
+}
+.loading-wrap .round {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  animation-name: loadingRotate;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-timing-function: revert;
+  background: #fff;
+  border: 10px solid #fff;
+  box-sizing: content-box;
+  z-index: 9999;
+}
+.loading-wrap .round svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.loading-wrap .logo,
+.loading-wrap .polygon {
+  animation-name: loadingColor;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+.loading-wrap .logoshape {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110px;
+  height: 110px;
+  z-index: 9999;
+}
+.loading-wrap #loadingPolygon {
+  width: 100%;
+  height: 100%;
+}
+
+/* 로그인 */
+.member-y {
+  background: linear-gradient(180deg, #5c6a82 0%, #272d37 100%);
+}
+
+.member-n {
+  background: #bbbcc8;
+}
+
+.member-n.certify-checked {
+  background-color: #437ef7;
+}
+
+.icon-info {
+  display: inline-block;
+  padding: 0 !important;
+  width: 30px;
+  height: 30px;
+  border-radius: 50% !important;
+  font-size: 2rem;
+  font-weight: 700;
+  vertical-align: top;
+}
+.icon-info.right {
+  float: right;
+}
+@media (max-width: 768px) {
+  .icon-info {
+    padding: 0 !important;
+    width: 25px;
+    height: 25px;
+    font-size: 1.4rem;
+  }
+}
+
+.icon-i {
+  position: relative;
+  border: 0;
+}
+.icon-i:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_info_nor.svg')
+    no-repeat center/100%;
+  width: 24px;
+  height: 24px;
+}
+@media (max-width: 768px) {
+  .icon-i:after {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.icon-q {
+  margin-left: 10px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border1);
+}
+.icon-q:after {
+  content: '?';
+  color: var(--color-primary);
+}
+
+/*404 , 에러*/
+.error-view {
+  margin-top: 100px;
+  text-align: center;
+}
+.error-view h2 {
+  display: block;
+  height: auto;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #999;
+}
+.error-view .name {
+  font-weight: 700;
+  font-size: 14rem;
+  color: #437ef7;
+}
+.error-view .state {
+  display: block;
+  margin: 0 0 20px 0;
+  font-size: 3rem;
+}
+.error-view p {
+  font-size: 2rem;
+}
+@media (max-width: 640px) {
+  .error-view {
+    margin-top: 40px;
+  }
+  .error-view .name {
+    font-size: 10rem;
+  }
+  .error-view .state {
+    font-size: 2.4rem;
+  }
+  .error-view p {
+    font-size: 1.6rem;
+  }
+}
+
+#header {
+  position: relative;
+  background-color: #000;
+}
+#header.pc .depth1 button,
+#header.pc .depth1 a {
+  color: #fff;
+}
+#header.pc .inner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 1200px;
+  height: 82px;
+}
+@media (max-width: 1400px) {
+  #header.pc .inner {
+    padding: 0 20px;
+    width: 100%;
+  }
+}
+@media (max-width: 1200px) {
+  #header.pc .inner {
+    padding: 0 15px;
+  }
+}
+#header.pc .logo {
+  display: inline-block;
+  width: 220px;
+  height: 40px;
+}
+#header.pc .logo img {
+  width: 100%;
+}
+#header.pc .util button,
+#header.pc .util a {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 0 17px;
+  line-height: 47px;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  vertical-align: middle;
+  color: #fff;
+}
+#header.pc .util .join {
+  color: #437ef7;
+}
+#header.pc .util .login {
+  background-color: #437ef7;
+}
+#header.pc .bg-depth2 {
+  position: absolute;
+  top: 82px;
+  width: 100%;
+  min-height: 540px;
+  fill: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+  z-index: 11;
+}
+@media (max-width: 1400px) {
+  #header.pc .bg-depth2 {
+    min-height: 400px;
+  }
+}
+#header.mb {
+  position: relative;
+  position: fixed;
+  top: 0px;
+  z-index: 20;
+  width: 100%;
+}
+#header.mb .top {
+  display: flex;
+  padding: 20px 20px 15px 20px;
+  height: 75px;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+}
+#header.mb .top .other {
+  display: inline-block;
+  margin: -35px 0 0 40px;
+  vertical-align: middle;
+  position: absolute;
+  top: 60px;
+  left: 140px;
+}
+#header.mb .top .other a {
+  color: #000;
+}
+#header.mb .top .other .other-links {
+  color: #fff;
+}
+#header.mb .top .other .other-link-pop {
+  top: 100%;
+}
+#header.mb .top .menu-mb {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_buger_menu.svg')
+    no-repeat center/100%;
+}
+#header.mb .top .menu-my {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: url('https://bodyfriend.speedgabia.com/img/bodyfriend/icon/icon_mypage.svg')
+    no-repeat center/90%;
+}
+#header.mb .top .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 200px;
+  height: 35px;
+}
+@media (max-width: 450px) {
+  #header.mb .top .logo {
+    width: 170px;
+    height: 28px;
+  }
+}
+#header.mb .top .logo h1 {
+  display: block;
+}
+#header.mb .top .logo img {
+  width: 100%;
+}
+#header.mb .con {
+  display: none;
+  position: fixed;
+  top: 75px;
+  z-index: 20;
+  width: 100%;
+  background-color: #fff;
+  color: #fff;
+}
+#header.mb .con.menu {
+  min-height: calc(100vh - 75px);
+}
+#header.mb .con.active {
+  display: block;
+}
+#header.mb .con .inner {
+  padding: 20px 20px;
+  background-color: #000;
+}
+#header.mb .con .util {
+  margin-top: 10px;
+}
+#header.mb .con .util a,
+#header.mb .con .util button {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 6px 10px;
+  border-radius: 30px;
+  border: 1px solid #fff;
+  font-size: 1.2rem;
+  color: #fff;
+}
+#header.mb .con .util a.my,
+#header.mb .con .util button.my {
+  background-color: #fff;
+  color: #000;
+}
+
+#header .gnb {
+  height: 100%;
+}
+#header .gnb a:hover {
+  font-weight: 700;
+}
+#header .gnb .depth1 {
+  display: flex;
+  height: 100%;
+}
+#header .gnb .depth1 > li {
+  display: block;
+  height: 100%;
+}
+#header .gnb .depth1 > li > button,
+#header .gnb .depth1 > li > a {
+  display: block;
+  padding: 30px 33px;
+  background-color: #000;
+  height: 100%;
+  font-size: 1.5rem;
+}
+@media (max-width: 1200px) {
+  #header .gnb .depth1 > li > button,
+  #header .gnb .depth1 > li > a {
+    padding: 30px 20px;
+  }
+}
+#header .gnb .depth2 {
+  display: none;
+  position: absolute;
+  top: 70px;
+  padding: 35px 65px;
+  width: 300px;
+  min-height: 540px;
+  z-index: 12;
+  transition: background-color 0.2s;
+}
+@media (max-width: 1400px) {
+  #header .gnb .depth2 {
+    padding: 35px;
+    width: 20%;
+    min-height: 400px;
+  }
+}
+#header .gnb .depth2 a {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #000;
+}
+@media (max-width: 1200px) {
+  #header .gnb .depth2 a {
+    font-size: 1.6rem;
+  }
+}
+#header .gnb .depth2 > label {
+  display: block;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  color: #b0b0b0;
+}
+@media (max-width: 1200px) {
+  #header .gnb .depth2 > label {
+    font-size: 1.4rem;
+  }
+}
+#header .gnb .depth2.active,
+#header .gnb .depth2:hover {
+  background-color: #000;
+}
+#header .gnb .depth2.active a,
+#header .gnb .depth2:hover a {
+  color: #fff;
+}
+#header .gnb .depth2.item0 {
+  left: -90px;
+}
+@media (max-width: 1400px) {
+  #header .gnb .depth2.item0 {
+    left: 0%;
+  }
+}
+#header .gnb .depth2.item1 {
+  left: 210px;
+}
+@media (max-width: 1400px) {
+  #header .gnb .depth2.item1 {
+    left: 20%;
+  }
+}
+#header .gnb .depth2.item2 {
+  left: 510px;
+}
+@media (max-width: 1400px) {
+  #header .gnb .depth2.item2 {
+    left: 40%;
+  }
+}
+#header .gnb .depth2.item3 {
+  left: 810px;
+}
+@media (max-width: 1400px) {
+  #header .gnb .depth2.item3 {
+    left: 60%;
+  }
+}
+#header .gnb .depth2.item4 {
+  left: 1110px;
+}
+@media (max-width: 1400px) {
+  #header .gnb .depth2.item4 {
+    left: 80%;
+  }
+}
+
+#header .gnb-mb {
+  background-color: #fff;
+  overflow-y: auto;
+  max-height: calc(100vh - 75px);
+}
+#header .gnb-mb .depth2 {
+  padding: 0 20px;
+  background: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_plus_gray.svg')
+    no-repeat calc(100% - 20px) 25px/20px;
+}
+#header .gnb-mb .depth2.active {
+  background-image: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_minus_grey.svg');
+}
+#header .gnb-mb .depth2.active ul {
+  display: block;
+}
+#header .gnb-mb .depth2 > button {
+  display: block;
+  color: #000;
+  padding: 20px 0;
+  width: 100%;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+#header .gnb-mb .depth2 ul {
+  display: none;
+  padding-bottom: 10px;
+}
+#header .gnb-mb .depth2 ul a {
+  display: block;
+  padding: 10px 0;
+  color: #999;
+}
+
+.other-links i {
+  display: inline-block;
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  background-image: url('https://bodyfriend.speedgabia.com/img/cs/icon/arrow_white_down.svg');
+  transition: all 0.3s;
+}
+.other-links.active i {
+  transform: rotate(180deg);
+}
+
+.other-link-pop {
+  display: none;
+  position: absolute;
+  top: 90%;
+  padding: 15px;
+  border-radius: 16px;
+  background-color: #fff;
+  border-width: 1px 1px 1px 1px;
+  border-color: #b0b0b0;
+  border-style: solid;
+  width: 274px;
+  z-index: 2;
+}
+@media (max-width: 450px) {
+  .other-link-pop {
+    right: -50%;
+  }
+}
+.other-link-pop.active {
+  display: block;
+}
+.other-link-pop a {
+  display: block;
+  padding: 16px;
+  color: #000 !important;
+  font-size: 1.6rem;
+}
+
+footer {
+  border-top: 1px solid #c5c5c5;
+}
+footer * {
+  color: #7b7b7b;
+}
+footer .inner {
+  margin: 0 auto;
+  width: 1200px;
+  padding: 30px;
+}
+@media (max-width: 1200px) {
+  footer .inner {
+    width: 100%;
+  }
+}
+@media (max-width: 830px) {
+  footer .inner {
+    padding: 30px 20px;
+  }
+}
+@media (max-width: 640px) {
+  footer .inner {
+    padding: 20px;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 540px) {
+  footer .inner {
+    font-size: 1.3rem;
+  }
+}
+footer .top a {
+  display: inline-block;
+  margin-right: 24px;
+  color: #7b7b7b;
+}
+footer .top .swiper-slide {
+  display: inline-block;
+  width: auto;
+}
+footer .bottom {
+  background-color: #f5f5f7;
+}
+footer .bottom h2 {
+  display: inline-block;
+  margin-right: 70px;
+  font-size: 1.5rem;
+  color: #272d37;
+}
+@media (max-width: 830px) {
+  footer .bottom h2 {
+    margin-right: 40px;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 768px) {
+  footer .bottom h2 {
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+footer .bottom .inner > div {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+@media (max-width: 830px) {
+  footer .bottom .inner > div {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 768px) {
+  footer .bottom .inner > div {
+    display: block;
+  }
+}
+footer .bottom .inner > div span {
+  display: inline-block;
+  margin-right: 24px;
+}
+@media (max-width: 830px) {
+  footer .bottom .inner > div span {
+    margin-right: 15px;
+  }
+}
+footer .bottom .select-family {
+  padding: 15px 40px 15px 20px;
+  background-color: #fff;
+  background-size: 20px;
+  background-position: calc(100% - 10px) center;
+  border-color: #dae0e6;
+  border-radius: 8px;
+  border-style: solid;
+  font-size: 1.6rem;
+}
+@media (max-width: 540px) {
+  footer .bottom .select-family {
+    margin-bottom: 20px;
+    padding: 10px 40px 10px 10px;
+    font-size: 1.4rem;
+    background-size: 15px;
+  }
+}
+footer .bottom .copy,
+footer .bottom .sns {
+  margin-bottom: 10px;
+}
+@media (max-width: 540px) {
+  footer .bottom .copy,
+  footer .bottom .sns {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 450px) {
+  footer .bottom .copy,
+  footer .bottom .sns {
+    margin-top: 10px;
+  }
+}
+footer .bottom .sns button,
+footer .bottom .sns a,
+footer .bottom .app button,
+footer .bottom .app a {
+  display: inline-block;
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+}
+@media (max-width: 540px) {
+  footer .bottom .sns button,
+  footer .bottom .sns a,
+  footer .bottom .app button,
+  footer .bottom .app a {
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+  }
+}
+footer .bottom .sns button img,
+footer .bottom .sns a img,
+footer .bottom .app button img,
+footer .bottom .app a img {
+  width: 100%;
+}
+
+.footer-notice {
+  border-top: 1px solid #c5c5c5;
+}
+.footer-notice .inner {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 1200px;
+  padding: 30px;
+}
+@media (max-width: 1200px) {
+  .footer-notice .inner {
+    width: 100%;
+  }
+}
+@media (max-width: 830px) {
+  .footer-notice .inner {
+    padding: 30px 20px;
+  }
+}
+@media (max-width: 640px) {
+  .footer-notice .inner {
+    padding: 20px;
+  }
+}
+.footer-notice .board-wrap {
+  display: flex;
+}
+@media (max-width: 640px) {
+  .footer-notice .board-wrap {
+    width: 100%;
+  }
+}
+.footer-notice .board-wrap * {
+  color: #272d37;
+  font-weight: 700;
+}
+.footer-notice .board-wrap .board-name {
+  display: inline-block;
+  margin-right: 30px;
+}
+@media (max-width: 640px) {
+  .footer-notice .board-wrap .board-name {
+    width: 60px;
+  }
+}
+@media (max-width: 540px) {
+  .footer-notice .board-wrap .board-name {
+    margin-right: 10px;
+    width: 50px;
+    font-size: 1.2rem;
+  }
+}
+.footer-notice .board-wrap .board-title {
+  display: inline-block;
+  position: relative;
+}
+@media (max-width: 640px) {
+  .footer-notice .board-wrap .board-title {
+    width: calc(100% - 95px);
+  }
+}
+@media (max-width: 540px) {
+  .footer-notice .board-wrap .board-title {
+    width: calc(100% - 60px);
+    font-size: 1.2rem;
+  }
+}
+.footer-notice .board-wrap .board-title .swiper-slide a {
+  display: inline-block;
+  position: relative;
+  padding-right: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.footer-notice .board-wrap .board-title .new:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 30px;
+  width: 24px;
+  height: 24px;
+  background-image: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_new_nor.svg');
+  background-repeat: no-repeat;
+  background-size: 22px;
+}
+@media (max-width: 540px) {
+  .footer-notice .board-wrap .board-title .new:before {
+    top: 1px;
+    background-size: 18px;
+  }
+}
+
+.board-more {
+  display: inline-block;
+  padding-right: 40px;
+  background: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_plus_more.svg')
+    no-repeat center right;
+  color: #b0b0b0;
+}
+@media (max-width: 640px) {
+  .board-more {
+    display: none;
+  }
+  .board-more.search-page {
+    display: inline-block;
+  }
+}
+@media (max-width: 540px) {
+  .board-more {
+    padding-right: 20px;
+    background-size: 15px;
+  }
+}
+
+.sitemap-wrap {
+  margin-top: 60px;
+}
+.sitemap-wrap .sitemap-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 20px 60px 20px;
+}
+.sitemap-wrap .sitemap-list > li {
+  margin-bottom: 10px;
+  width: 25%;
+}
+@media (max-width: 1024px) {
+  .sitemap-wrap .sitemap-list > li {
+    width: 33.33%;
+  }
+}
+@media (max-width: 540px) {
+  .sitemap-wrap .sitemap-list > li {
+    width: 100%;
+  }
+}
+.sitemap-wrap .sitemap-list > li > a {
+  display: block;
+  margin: 10px 0;
+  font-size: 2rem;
+}
+@media (max-width: 1024px) {
+  .sitemap-wrap .sitemap-list > li > a {
+    font-size: 1.6rem;
+  }
+}
+.sitemap-wrap label {
+  display: block;
+  padding: 15px 20px;
+  font-size: 2rem;
+  background-color: #f5faff;
+  font-weight: 700;
+}
+@media (max-width: 1024px) {
+  .sitemap-wrap label {
+    font-size: 1.6rem;
+  }
+}
+.sitemap-wrap > ul.main-gnb > li > a {
+  display: none;
+}
+.sitemap-wrap > ul > li .depth2 {
+  margin: 20px 0;
+}
+@media (max-width: 540px) {
+  .sitemap-wrap > ul > li .depth2 {
+    margin: 0;
+  }
+}
+
+.bradbrumb_wrap {
+  padding: 20px;
+  border-bottom: 1px solid #a4a4a4;
+}
+@media (max-width: 1024px) {
+  .bradbrumb_wrap {
+    margin-top: 75px;
+  }
+}
+.bradbrumb_wrap * {
+  font-size: 1.2rem;
+  color: #a4a4a4;
+}
+.bradbrumb_wrap .inner {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 1200px;
+}
+@media (max-width: 1200px) {
+  .bradbrumb_wrap .inner {
+    width: 100%;
+  }
+}
+.bradbrumb_wrap li {
+  position: relative;
+  margin-right: 15px;
+  padding-right: 15px;
+}
+.bradbrumb_wrap li:after {
+  content: '>';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.bradbrumb_wrap li span,
+.bradbrumb_wrap li a {
+  display: block;
+  cursor: pointer;
+  color: #a4a4a4;
+}
+.bradbrumb_wrap li:last-child::after {
+  display: none;
+}
+.bradbrumb_wrap li:last-child > span {
+  padding-right: 15px;
+}
+.bradbrumb_wrap li:last-child > span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url('https://bodyfriend.speedgabia.com/img/cs/icon/arrow_grey_down.svg')
+    no-repeat center;
+  transition: all 0.2s;
+}
+.bradbrumb_wrap li.active > a:after {
+  transform: rotate(180deg) translateY(50%);
+}
+.bradbrumb_wrap li.active .pop {
+  display: block;
+}
+.bradbrumb_wrap .pop {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  padding: 20px;
+  width: 150px;
+  border-radius: 8px;
+  border: 1px solid #b0b0b0;
+  background-color: #fff;
+  z-index: 2;
+}
+.bradbrumb_wrap .pop a {
+  padding: 5px 0;
+}
+
+.form-viewer-basic .col-1,
+.form-viewer-basic .col-2,
+.form-viewer-basic .col-3,
+.form-write-basic .col-1,
+.form-write-basic .col-2,
+.form-write-basic .col-3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+@media (max-width: 450px) {
+  .form-viewer-basic .col-1,
+  .form-viewer-basic .col-2,
+  .form-viewer-basic .col-3,
+  .form-write-basic .col-1,
+  .form-write-basic .col-2,
+  .form-write-basic .col-3 {
+    display: block;
+  }
+}
+.form-viewer-basic .col-1 > .col,
+.form-write-basic .col-1 > .col {
+  width: 100%;
+}
+.form-viewer-basic .col-2 > .col,
+.form-write-basic .col-2 > .col {
+  width: calc(50% - 5px);
+}
+@media (max-width: 450px) {
+  .form-viewer-basic .col-2 > .col,
+  .form-write-basic .col-2 > .col {
+    width: 100%;
+  }
+}
+.form-viewer-basic .col-3 > .col,
+.form-write-basic .col-3 > .col {
+  width: calc(33.33% - 5px);
+}
+@media (max-width: 450px) {
+  .form-viewer-basic .col-3 > .col,
+  .form-write-basic .col-3 > .col {
+    width: 100%;
+  }
+}
+.form-viewer-basic .col > p,
+.form-write-basic .col > p {
+  line-height: 2rem;
+  font-size: 1.6rem;
+}
+@media (max-width: 640px) {
+  .form-viewer-basic .col > p,
+  .form-write-basic .col > p {
+    font-size: 1.4rem;
+  }
+}
+.form-viewer-basic .col > p em,
+.form-write-basic .col > p em {
+  position: relative;
+  padding: 0 10px 0 0;
+  margin-right: 10px;
+}
+.form-viewer-basic .col > p em:after,
+.form-write-basic .col > p em:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 15px;
+  background-color: #999;
+}
+.form-viewer-basic .col > p em:last-child:after,
+.form-write-basic .col > p em:last-child:after {
+  display: none;
+}
+.form-viewer-basic .form-txt,
+.form-write-basic .form-txt {
+  padding-left: 20px;
+  text-indent: -20px;
+  font-size: 1.6rem;
+}
+.form-viewer-basic .txt,
+.form-write-basic .txt {
+  font-size: 1.6rem;
+}
+.form-viewer-basic .form-txt em,
+.form-viewer-basic .txt em,
+.form-write-basic .form-txt em,
+.form-write-basic .txt em {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.form-viewer-basic .form-txt em:after,
+.form-viewer-basic .txt em:after,
+.form-write-basic .form-txt em:after,
+.form-write-basic .txt em:after {
+  display: none;
+}
+@media (max-width: 450px) {
+  .form-viewer-basic .form-txt,
+  .form-viewer-basic .txt,
+  .form-write-basic .form-txt,
+  .form-write-basic .txt {
+    font-size: 1.4rem;
+  }
+}
+.form-viewer-basic .form-title,
+.form-write-basic .form-title {
+  margin-bottom: 15px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .form-viewer-basic .form-title,
+  .form-write-basic .form-title {
+    font-size: 1.6rem;
+  }
+}
+.form-viewer-basic .form-title p.grey,
+.form-write-basic .form-title p.grey {
+  color: #bbbcc8;
+}
+.form-viewer-basic .form-title p,
+.form-write-basic .form-title p {
+  display: inline-block;
+}
+@media (max-width: 640px) {
+  .form-viewer-basic .form-title,
+  .form-write-basic .form-title {
+    font-size: 1.6rem;
+  }
+}
+.form-viewer-basic .necessary:after,
+.form-write-basic .necessary:after {
+  content: '*';
+  display: inline-block;
+  margin-left: 3px;
+  color: #f00;
+  vertical-align: text-top;
+  font-weight: 700;
+}
+.form-viewer-basic button:disabled,
+.form-write-basic button:disabled {
+  background-color: #f3f3f3 !important;
+  color: #7b7b7b !important;
+}
+.form-viewer-basic .file-down-wrap,
+.form-write-basic .file-down-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-viewer-basic .file-down-wrap button,
+.form-viewer-basic .file-down-wrap a,
+.form-write-basic .file-down-wrap button,
+.form-write-basic .file-down-wrap a {
+  margin-right: 10px;
+  word-break: break-all;
+}
+@media (max-width: 640px) {
+  .form-viewer-basic .file-down-wrap button,
+  .form-viewer-basic .file-down-wrap a,
+  .form-write-basic .file-down-wrap button,
+  .form-write-basic .file-down-wrap a {
+    font-size: 1.6rem;
+  }
+}
+.form-viewer-basic .file-down,
+.form-write-basic .file-down {
+  font-size: 2rem;
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .form-viewer-basic .file-down,
+  .form-write-basic .file-down {
+    font-size: 1.6rem;
+  }
+}
+.form-viewer-basic .btn-icon i,
+.form-viewer-basic .btn-icon em,
+.form-write-basic .btn-icon i,
+.form-write-basic .btn-icon em {
+  vertical-align: middle;
+}
+.form-viewer-basic .align-side .col,
+.form-write-basic .align-side .col {
+  display: flex;
+  justify-content: space-between;
+}
+.form-viewer-basic .align-side .col span,
+.form-write-basic .align-side .col span {
+  display: block;
+}
+@media (max-width: 640px) {
+  .form-viewer-basic .align-side .col,
+  .form-write-basic .align-side .col {
+    display: block;
+  }
+}
+.form-viewer-basic .align-side .form-item,
+.form-write-basic .align-side .form-item {
+  margin-bottom: 20px;
+}
+.form-viewer-basic .align-side .form-item.line,
+.form-write-basic .align-side .form-item.line {
+  padding-top: 20px;
+  border-top: 1px solid #bbbcc8;
+}
+.form-viewer-basic .align-side .total-price span,
+.form-write-basic .align-side .total-price span {
+  display: inline;
+  font-size: 2.4rem;
+}
+
+.btn-massage-chair-ai {
+  padding: 4px 16px 4px 10px !important;
+  border-width: 1px 1px 1px 1px;
+  border-radius: 10px;
+  border-color: #dae0e6;
+  border-style: solid;
+  font-size: 1.6rem;
+}
+@media (max-width: 640px) {
+  .btn-massage-chair-ai {
+    margin-top: -5px;
+    padding: 2px 10px 2px 5px;
+    border-radius: 6px;
+  }
+  .btn-massage-chair-ai i {
+    width: 30px;
+    height: 30px;
+  }
+  .btn-massage-chair-ai * {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .form-product-selector.col-2 .col {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .form-radio-chk-type2.col-3 .col,
+  .form-radio-chk-flex.col-3 .col {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) and (max-width: 768px) {
+  .form-radio-chk-flex .radio-btn span:last-child {
+    padding: 5px 10px;
+    border: 0;
+    color: #dbdbdb;
+  }
+}
+.form-viewer-basic.form-viewer-result {
+  margin-top: 40px;
+  padding: 10px 40px 40px 40px;
+  background-color: #fff;
+}
+@media (max-width: 450px) {
+  .form-viewer-basic.form-viewer-result {
+    padding: 10px;
+  }
+}
+.form-viewer-basic .form-title {
+  display: block;
+  color: var(--color-grey-bbbcc8);
+}
+.form-viewer-basic .form-item {
+  margin-bottom: 40px;
+}
+.form-viewer-basic .form-item:last-child {
+  margin-bottom: 0;
+}
+.form-viewer-basic .form-item.top-line {
+  padding-top: 40px;
+  border-top: 1px solid #dae0e6;
+}
+@media (max-width: 450px) {
+  .form-viewer-basic .form-item.col-2 .col {
+    margin-bottom: 40px;
+  }
+}
+.form-viewer-basic .form-info p {
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 1.6;
+  word-break: break-all;
+}
+@media (max-width: 768px) {
+  .form-viewer-basic .form-info p {
+    font-size: 1.6rem;
+  }
+}
+.form-viewer-basic .form-info p em {
+  margin-right: 10px;
+}
+
+.form-write-basic * {
+  color: #272d37;
+}
+.form-write-basic input[type='text'],
+.form-write-basic input[type='number'],
+.form-write-basic input[type='password'],
+.form-write-basic select,
+.form-write-basic textarea,
+.form-write-basic button {
+  padding: 20px;
+  border-width: 1px 1px 1px 1px;
+  border-radius: 10px;
+  border-color: #dae0e6;
+  border-style: solid;
+  font-size: 1.6rem;
+}
+@media (max-width: 768px) {
+  .form-write-basic input[type='text'],
+  .form-write-basic input[type='number'],
+  .form-write-basic input[type='password'],
+  .form-write-basic select,
+  .form-write-basic textarea,
+  .form-write-basic button {
+    padding: 17px 15px;
+  }
+}
+@media (max-width: 450px) {
+  .form-write-basic input[type='text'],
+  .form-write-basic input[type='number'],
+  .form-write-basic input[type='password'],
+  .form-write-basic select,
+  .form-write-basic textarea,
+  .form-write-basic button {
+    font-size: 1.4rem;
+  }
+}
+.form-write-basic .form-item {
+  margin-bottom: 10px;
+}
+.form-write-basic .form-item input[type='text'],
+.form-write-basic .form-item input[type='number'],
+.form-write-basic .form-item input[type='password'],
+.form-write-basic .form-item select,
+.form-write-basic .form-item textarea {
+  width: 100%;
+}
+.form-write-basic .form-viewer-item .form-item {
+  margin-bottom: 20px;
+}
+@media (max-width: 450px) {
+  .form-write-basic .form-viewer-item .form-item {
+    margin-bottom: 10px;
+  }
+  .form-write-basic .form-viewer-item .form-item .col {
+    margin-bottom: 10px;
+  }
+}
+.form-write-basic .form-call {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 950px) {
+  .form-write-basic .form-call {
+    display: block;
+  }
+}
+.form-write-basic .form-call .form-call-inner {
+  display: flex;
+  width: auto;
+  align-items: center;
+}
+.form-write-basic .form-call .form-call-inner > span {
+  padding: 0 10px;
+  font-size: 2rem;
+}
+.form-write-basic .form-call .form-call-inner > div {
+  width: 180px;
+}
+.form-write-basic .form-call.form-cert .cert-check-wrap {
+  display: flex;
+  width: 400px;
+}
+@media (max-width: 1024px) {
+  .form-write-basic .form-call.form-cert .cert-check-wrap {
+    width: 100%;
+  }
+}
+@media (max-width: 950px) {
+  .form-write-basic .form-call.form-cert .cert-check-wrap {
+    margin: 10px 0 0 0;
+  }
+}
+.form-write-basic .form-call.form-cert .cert-check-wrap .cert-state {
+  padding: 20px;
+  font-size: 1.6rem;
+}
+.form-write-basic .form-call.form-cert .cert-check-wrap .cert-state .on {
+  color: #437ef7;
+}
+.form-write-basic .form-call.form-cert .cert-check-wrap .cert-state .off {
+  color: #f00;
+}
+.form-write-basic .form-call.form-cert .cert-check-wrap button {
+  margin-left: 10px;
+  width: 150px;
+}
+@media (max-width: 950px) {
+  .form-write-basic .form-call.form-cert .cert-check-wrap button {
+    margin-left: 0;
+    width: 180px;
+  }
+}
+@media (max-width: 540px) {
+  .form-write-basic .form-call.form-cert .cert-check-wrap button {
+    width: auto;
+    font-size: 1.6rem;
+  }
+}
+.form-write-basic .form-addr input[type='text'].zipcode {
+  margin-right: 10px;
+  padding: 17px 15px;
+  width: calc(100% - 200px);
+  max-width: 440px;
+}
+@media (max-width: 768px) {
+  .form-write-basic .form-addr input[type='text'].zipcode {
+    width: calc(100% - 155px);
+  }
+}
+.form-write-basic .form-addr .btn-zip {
+  display: inline-block;
+  padding: 15px;
+  min-width: 190px;
+  height: 66px;
+  background: #fff;
+  color: #272d37;
+  border: 1px solid #dae0e6;
+  border-radius: 10px;
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .form-write-basic .form-addr .btn-zip {
+    display: inline-block;
+    padding: 15px;
+    min-width: 118px;
+    height: 60px;
+    background: #fff;
+    color: #272d37;
+    border: 1px solid #dae0e6;
+    border-radius: 10px;
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+@media (max-width: 450px) {
+  .form-write-basic .form-addr .btn-zip {
+    display: inline-block;
+    padding: 15px;
+    min-width: 118px;
+    height: 56px;
+    background: #fff;
+    color: #272d37;
+    border: 1px solid #dae0e6;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+.form-write-basic .form-sch {
+  display: flex;
+}
+.form-write-basic .form-sch > div {
+  margin-right: 10px;
+  width: 270px;
+}
+.form-write-basic .form-point-input {
+  margin-top: 20px;
+  padding: 20px 20px 15px 20px;
+  width: 350px;
+  border: 1px solid #dae0e6;
+  border-radius: 10px;
+}
+@media (max-width: 640px) {
+  .form-write-basic .form-point-input {
+    width: 100%;
+  }
+}
+.form-write-basic .form-point-input em {
+  color: #bbbcc8;
+  font-size: 1.6rem;
+}
+.form-write-basic .form-point-input input {
+  padding: 0 10px 5px 10px;
+  width: calc(100% - 50px) !important;
+  border: 0;
+}
+.form-write-basic .form-input-btn {
+  display: flex;
+}
+.form-write-basic .form-input-btn input {
+  width: calc(100% - 200px);
+}
+.form-write-basic .form-input-btn button {
+  margin-left: 10px;
+  width: 200px;
+}
+@media (max-width: 640px) {
+  .form-write-basic .form-input-btn {
+    display: block;
+  }
+  .form-write-basic .form-input-btn input {
+    margin-bottom: 10px;
+    padding: 17px 15px;
+    width: 100%;
+  }
+  .form-write-basic .form-input-btn button {
+    margin: 0;
+    padding: 15px;
+    font-size: 1.6rem;
+    width: 100%;
+  }
+}
+.form-write-basic .form-mail {
+  display: flex;
+}
+@media (max-width: 1024px) {
+  .form-write-basic .form-mail {
+    display: block;
+  }
+  .form-write-basic .form-mail .mail-chk {
+    margin-top: 10px;
+  }
+}
+.form-write-basic .form-mail .form-mail-inner {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 640px) {
+  .form-write-basic .form-mail .form-mail-inner {
+    flex-wrap: wrap;
+  }
+}
+.form-write-basic .form-mail .form-mail-inner > span {
+  padding: 0 10px;
+  font-size: 2rem;
+}
+@media (max-width: 640px) {
+  .form-write-basic .form-mail .form-mail-inner > span {
+    padding: 0 5px;
+    font-size: 1.6rem;
+  }
+}
+.form-write-basic .form-mail .mail-select,
+.form-write-basic .form-mail .mail-txt {
+  margin-right: 10px;
+}
+.form-write-basic .form-mail .mail-select {
+  width: 250px;
+}
+@media (max-width: 640px) {
+  .form-write-basic .form-mail .mail-id {
+    width: calc(100% - 30px);
+  }
+  .form-write-basic .form-mail .mail-txt {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: calc(100% - 20px);
+  }
+  .form-write-basic .form-mail .mail-select {
+    width: 100%;
+  }
+}
+.form-write-basic .markting-agree-state span {
+  margin-right: 20px;
+}
+@media (max-width: 450px) {
+  .form-write-basic .markting-agree-state .marking-agree-date {
+    display: block;
+  }
+}
+
+.form-write-item {
+  margin-bottom: 20px;
+}
+.form-write-item .form-selectbox.form-width-half > div {
+  width: 50%;
+}
+.form-write-item .form-selectbox label {
+  position: absolute;
+  opacity: 0;
+  text-indent: -9999px;
+  width: 0;
+  height: 0;
+}
+.form-write-item .form-selectbox-list {
+  margin-top: 10px;
+}
+.form-write-item .form-selectbox-list button {
+  margin-right: 5px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #dae0e6;
+}
+.form-write-item .form-selectbox-list .selected-itm {
+  padding-right: 40px;
+  background: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_del_nor_grey.svg')
+    no-repeat calc(100% - 10px) center/18px;
+}
+.form-write-item .form-selectbox-list .selected-itm:hover {
+  text-decoration: line-through;
+}
+.form-write-item .form-write-same-chk {
+  display: flex;
+  font-size: 2rem;
+}
+@media (max-width: 768px) {
+  .form-write-item .form-write-same-chk {
+    font-size: 1.6rem;
+  }
+}
+.form-write-item .form-write-same-chk.right {
+  justify-content: flex-end;
+}
+.form-write-item .form-write-same-chk label {
+  cursor: pointer;
+  padding-left: 40px;
+  height: 30px;
+  background-image: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_check_round_off.svg');
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 768px) {
+  .form-write-item .form-write-same-chk label {
+    padding-left: 28px;
+    height: 23px;
+    background-size: 20px;
+  }
+}
+.form-write-item .form-write-same-chk input:checked + label {
+  background-image: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_check_round_on.svg');
+}
+.form-write-item .pwd-chk {
+  padding-left: 20px;
+}
+.form-write-item .pwd-chk,
+.form-write-item .pwd-chk li {
+  list-style: initial;
+  font-size: 1.4rem;
+}
+.form-write-item .pwd-chk.active,
+.form-write-item .pwd-chk li.active {
+  color: #437ef7;
+}
+
+.form-write-title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  margin-bottom: 40px;
+  padding: 25px 20px;
+  background-color: #f5faff;
+}
+@media (max-width: 640px) {
+  .form-write-title {
+    margin-top: 60px;
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 450px) {
+  .form-write-title {
+    display: block;
+  }
+}
+.form-write-title p {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.form-write-title p.memberInfo {
+  color: #999;
+  font-weight: 500;
+}
+@media (max-width: 640px) {
+  .form-write-title p {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 450px) {
+  .form-write-title p {
+    font-size: 1.4rem;
+  }
+}
+.form-write-title button.serviceTransfer,
+.form-write-title button.serviceAssembleDisassembleFormData,
+.form-write-title button.afterService,
+.form-write-title button.serviceSeat {
+  padding: 0;
+  border: 0;
+  padding-left: 28px;
+  background: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_info_nor.svg')
+    no-repeat center left;
+  background-color: transparent;
+  color: #c9c9c9;
+  font-size: 1.6rem;
+}
+@media (max-width: 450px) {
+  .form-write-title button.serviceTransfer,
+  .form-write-title button.serviceAssembleDisassembleFormData,
+  .form-write-title button.afterService,
+  .form-write-title button.serviceSeat {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 450px) {
+  .form-write-title button {
+    float: right;
+    font-size: 1.4rem;
+  }
+}
+
+.form-view-title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  margin-bottom: 40px;
+}
+.form-view-title.center {
+  justify-content: center;
+}
+@media (max-width: 640px) {
+  .form-view-title {
+    margin-top: 60px;
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 450px) {
+  .form-view-title {
+    margin-top: 40px;
+  }
+}
+.form-view-title p {
+  display: inline-block;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+.form-view-title p.font36 {
+  font-size: 3.6rem;
+}
+@media (max-width: 640px) {
+  .form-view-title p.font36 {
+    font-size: 2.4rem;
+  }
+}
+.form-view-title p.font32 {
+  font-size: 3.2rem;
+}
+@media (max-width: 640px) {
+  .form-view-title p.font32 {
+    font-size: 2.4rem;
+  }
+}
+.form-view-title p.videoDetail {
+  display: block;
+  width: 1200px;
+  margin: 0 auto;
+}
+@media (max-width: 1200px) {
+  .form-view-title p.videoDetail {
+    width: 100%;
+  }
+}
+.form-view-title button.payment {
+  padding: 10px 20px;
+  background-color: #437ef7;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.form-radio-btns .radio-btn span {
+  display: block;
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 1px solid #dae0e6;
+  border-radius: 10px;
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .form-radio-btns .radio-btn span {
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+  }
+}
+.form-radio-btns .radio-btn span:first-child {
+  font-size: 2rem;
+  padding-left: 50px;
+  background-image: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_radio_off.svg');
+  background-position: 20px center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 1024px) {
+  .form-radio-btns .radio-btn span:first-child {
+    font-size: 1.6rem;
+  }
+}
+.form-radio-btns .radio-btn input:checked + label span {
+  border-color: #437ef7;
+}
+.form-radio-btns .radio-btn input:checked + label span:first-child {
+  background-image: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_radio_on.svg');
+}
+
+.form-viewer-price {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 44px;
+  padding: 0 77px;
+  font-size: 2rem;
+}
+@media (max-width: 768px) {
+  .form-viewer-price {
+    margin-top: 20px;
+    padding: 0 30px;
+    font-size: 1.6rem;
+  }
+}
+.form-viewer-price span {
+  color: #bbbcc8;
+}
+.form-viewer-price a:hover {
+  text-decoration: underline;
+}
+.form-viewer-price strong em {
+  color: #f00;
+  font-size: 2.4rem;
+}
+@media (max-width: 768px) {
+  .form-viewer-price strong em {
+    font-size: 2rem;
+  }
+}
+
+.form-delivery-info span {
+  display: block;
+  margin: 5px 0;
+}
+
+.term-agree-wrap {
+  margin-top: 40px;
+  padding: 0 20px;
+}
+@media (max-width: 450px) {
+  .term-agree-wrap {
+    padding: 0 10px;
+  }
+}
+.term-agree-wrap .terms-list {
+  position: relative;
+  margin-bottom: 10px;
+}
+.term-agree-wrap .terms-list .btn-temp-pop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid #dae0e6;
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+.term-agree-wrap .terms-list .btn-temp-pop:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #dae0e6;
+  border-right: 2px solid #dae0e6;
+  transform: translateY(-50%) rotate(45deg);
+}
+.term-agree-wrap .terms-list.allChkDiv {
+  margin-bottom: 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #dae0e6;
+}
+.term-agree-wrap .terms-list .temp-title {
+  display: block;
+}
+.term-agree-wrap .terms-list .temp-title > span,
+.term-agree-wrap .terms-list .temp-title > button {
+  vertical-align: top;
+}
+.term-agree-wrap .terms-list .temp-title > span {
+  display: inline-block;
+  width: calc(100% - 40px);
+}
+.term-agree-wrap .terms-list .temp-title.wide > span {
+  display: block;
+  width: 100%;
+}
+.term-agree-wrap .inner p {
+  font-size: 1.3rem;
+}
+
+.btn-wrap {
+  margin-top: 100px;
+}
+@media (max-width: 640px) {
+  .btn-wrap {
+    margin-top: 40px;
+  }
+}
+.btn-wrap.align-center {
+  text-align: center;
+}
+.btn-wrap.align-side-center {
+  display: flex;
+  justify-content: space-between;
+}
+.btn-wrap.align-side {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 640px) {
+  .btn-wrap.align-side {
+    display: block;
+  }
+  .btn-wrap.align-side.member-info-btn {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .btn-wrap.align-side.member-info-btn .signout {
+    margin-top: 20px;
+  }
+  .btn-wrap.align-side > div:last-child {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+}
+.btn-wrap.type1 button {
+  display: inline-block;
+  padding: 22px;
+  min-width: 496px;
+  height: 80px;
+  background: #437ef7;
+  color: #fff;
+  border: 1px solid #437ef7;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .btn-wrap.type1 button {
+    display: inline-block;
+    padding: 0px;
+    min-width: 90%;
+    height: 60px;
+    background: #437ef7;
+    color: #fff;
+    border: 1px solid #437ef7;
+    border-radius: 10px;
+    font-size: 1.8rem;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+@media (max-width: 450px) {
+  .btn-wrap.type1 button {
+    display: inline-block;
+    padding: 0px;
+    min-width: 100%;
+    height: 60px;
+    background: #437ef7;
+    color: #fff;
+    border: 1px solid #437ef7;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+.btn-wrap.type2 a,
+.btn-wrap.type2 button {
+  margin: 0 4px;
+  vertical-align: middle;
+}
+@media (max-width: 768px) {
+  .btn-wrap.type2 a,
+  .btn-wrap.type2 button {
+    min-width: 160px;
+  }
+}
+@media (max-width: 450px) {
+  .btn-wrap.type2 a,
+  .btn-wrap.type2 button {
+    padding: 15px 5px;
+    min-width: 100px;
+    font-size: 1.6rem;
+    height: 55px;
+  }
+}
+.btn-wrap.btn-m a,
+.btn-wrap.btn-m button {
+  padding: 14px 20px;
+  min-width: 150px;
+  height: 55px;
+  font-size: 1.6rem;
+}
+@media (max-width: 450px) {
+  .btn-wrap.btn-m a,
+  .btn-wrap.btn-m button {
+    padding: 15px 5px;
+    min-width: 100px;
+  }
+}
+.btn-wrap button:disabled {
+  background-color: #f3f3f3;
+  color: #272d37;
+}
+.btn-wrap .btn-grey {
+  display: inline-block;
+  padding: 22px 0;
+  min-width: 248px;
+  height: 80px;
+  background: #fff;
+  color: #999;
+  border: 1px solid #999;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+.btn-wrap .btn-transparent {
+  display: inline-block;
+  padding: 22px 0;
+  min-width: auto;
+  height: 80px;
+  background: #fff;
+  color: #999;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+.btn-wrap .btn-white {
+  display: inline-block;
+  padding: 22px;
+  min-width: 248px;
+  height: 80px;
+  background: #fff;
+  color: #437ef7;
+  border: 1px solid #437ef7;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+.btn-wrap .btn-primary {
+  display: inline-block;
+  padding: 22px;
+  min-width: 248px;
+  height: 80px;
+  background: #437ef7;
+  color: #fff;
+  border: 1px solid #437ef7;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+.btn-wrap .btn-pay {
+  display: inline-block;
+  padding: 22px 120px;
+  min-width: 248px;
+  height: 80px;
+  background: #437ef7;
+  color: #fff;
+  border: 1px solid #437ef7;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .btn-wrap .btn-pay {
+    display: inline-block;
+    padding: 22px 60px;
+    min-width: 248px;
+    height: 80px;
+    background: #437ef7;
+    color: #fff;
+    border: 1px solid #437ef7;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+@media (max-width: 640px) {
+  .btn-wrap .btn-pay {
+    display: inline-block;
+    padding: 22px;
+    min-width: auto;
+    height: 80px;
+    background: #437ef7;
+    color: #fff;
+    border: 1px solid #437ef7;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+@media (max-width: 450px) {
+  .btn-wrap .btn-pay {
+    display: inline-block;
+    padding: 0 10px !important;
+    min-width: auto;
+    height: 60px;
+    background: #437ef7;
+    color: #fff;
+    border: 1px solid #437ef7;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+.btn_area {
+  text-align: center;
+}
+.btn_area button,
+.btn_area a {
+  margin: 0 2px;
+}
+.btn_area button.btn_primary,
+.btn_area a.btn_primary {
+  display: inline-block;
+  margin: 2px;
+  padding: 10px 20px;
+  background-color: #437ef7;
+  color: #fff;
+  width: 200px;
+}
+
+.form-box {
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 1px solid #dae0e6;
+  border-radius: 20px;
+  font-size: 1.4rem;
+}
+.form-box > label {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.form-box ul {
+  margin-left: 15px;
+}
+.form-box ul li {
+  margin-bottom: 10px;
+  list-style: decimal;
+  line-height: 1.4;
+}
+
+.form-file input[type='file'] {
+  margin: 0;
+  padding: 0;
+  width: 0;
+  height: 0;
+  border: 0;
+  min-width: 0;
+  overflow: hidden;
+  position: absolute;
+  left: -9999px;
+}
+.form-file .form-file-inner {
+  display: flex;
+}
+@media (max-width: 640px) {
+  .form-file .form-file-inner {
+    display: block;
+    position: relative;
+    padding-top: 70px;
+  }
+}
+.form-file .file-list {
+  margin-right: 10px;
+  padding: 20px;
+  width: calc(100% - 200px);
+  min-height: 66px;
+  background-color: #f3f3f3;
+  border: 1px solid #dae0e6;
+  border-radius: 10px;
+}
+@media (max-width: 640px) {
+  .form-file .file-list {
+    width: 100%;
+  }
+  .form-file .file-list .txt {
+    font-size: 1.6rem;
+    color: #c9c9c9;
+  }
+}
+.form-file .file-list .file-item {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+.form-file .file-list .file-item span {
+  word-break: break-all;
+  max-width: calc(100% - 30px);
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 450px) {
+  .form-file .file-list .file-item span {
+    white-space: normal;
+  }
+}
+.form-file .file-list .file-item .btn-remove-file {
+  padding: 0;
+  border: 0;
+  margin-left: 4px;
+  width: 24px;
+  height: 24px;
+  background: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_del_nor.svg')
+    no-repeat center;
+}
+.form-file .btn-file {
+  display: inline-block;
+  padding: 15px;
+  min-width: 190px;
+  height: 66px;
+  background: #fff;
+  color: #272d37;
+  border: 1px solid #dae0e6;
+  border-radius: 10px;
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+@media (max-width: 640px) {
+  .form-file .btn-file {
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    padding: 15px;
+    min-width: 100%;
+    height: 60px;
+    background: #fff;
+    color: #272d37;
+    border: 1px solid #dae0e6;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+.form-file .notice {
+  margin: 5px 0;
+  padding: 0 20px;
+}
+@media (max-width: 450px) {
+  .form-file .notice {
+    padding: 0 10px;
+  }
+}
+.form-file .notice p {
+  color: #dbdbdb;
+}
+@media (max-width: 450px) {
+  .form-file .notice p {
+    font-size: 1.4rem;
+  }
+}
+
+.input-form-datepicker {
+  background-image: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_calendar.svg') !important;
+  background-position: calc(100% - 20px) center !important;
+  background-repeat: no-repeat !important;
+  background-color: #fff !important;
+}
+@media (max-width: 1024px) {
+  .input-form-datepicker {
+    background-position: calc(100% - 15px) center !important;
+  }
+}
+@media (max-width: 540px) {
+  .input-form-datepicker {
+    background-position: calc(100% - 8px) center !important;
+    background-size: 16px;
+  }
+}
+
+.input-form-type1 {
+  width: 432px !important;
+  padding: 20px;
+  border-width: 1px 1px 1px 1px;
+  border-radius: 10px;
+  border-color: #dae0e6;
+  border-style: solid;
+  font-size: 1.6rem;
+}
+@media (max-width: 640px) {
+  .input-form-type1 {
+    width: 300px !important;
+  }
+}
+@media (max-width: 450px) {
+  .input-form-type1 {
+    width: 100% !important;
+  }
+}
+
+.input-form-rangepicker {
+  width: 180px !important;
+  padding: 14px 40px 14px 20px;
+  border-width: 1px 1px 1px 1px;
+  border-radius: 10px;
+  border-color: #dae0e6;
+  border-style: solid;
+  font-size: 1.6rem;
+}
+@media (max-width: 1024px) {
+  .input-form-rangepicker {
+    padding: 12px 30px 12px 15px;
+    border-width: 1px 1px 1px 1px;
+    border-radius: 10px;
+    border-color: #dae0e6;
+    border-style: solid;
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 540px) {
+  .input-form-rangepicker {
+    width: 115px !important;
+    padding: 8px 15px 8px 12px;
+    border-width: 1px 1px 1px 1px;
+    border-radius: 10px;
+    border-color: #dae0e6;
+    border-style: solid;
+    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+}
+
+.react-datepicker * {
+  color: #fff;
+}
+.react-datepicker select {
+  padding: 4px 20px 4px 10px;
+  background-size: 15px;
+  background-position: calc(100% - 4px) center;
+  background-image: url('https://bodyfriend.speedgabia.com/img/cs/icon/arrow_white_down.svg');
+}
+.react-datepicker option {
+  color: #272d37;
+}
+.react-datepicker .react-datepicker__triangle::after {
+  border-bottom-color: #437ef7 !important;
+}
+.react-datepicker .react-datepicker__day--selected,
+.react-datepicker .react-datepicker__day--in-selecting-range,
+.react-datepicker .react-datepicker__day--in-range,
+.react-datepicker .react-datepicker__month-text--selected,
+.react-datepicker .react-datepicker__month-text--in-selecting-range,
+.react-datepicker .react-datepicker__month-text--in-range,
+.react-datepicker .react-datepicker__quarter-text--selected,
+.react-datepicker .react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker .react-datepicker__quarter-text--in-range,
+.react-datepicker .react-datepicker__year-text--selected,
+.react-datepicker .react-datepicker__year-text--in-selecting-range,
+.react-datepicker .react-datepicker__year-text--in-range,
+.react-datepicker .react-datepicker__header,
+.react-datepicker .react-datepicker__day--keyboard-selected,
+.react-datepicker .react-datepicker__month-text--keyboard-selected,
+.react-datepicker .react-datepicker__quarter-text--keyboard-selected,
+.react-datepicker .react-datepicker__year-text--keyboard-selected {
+  background-color: #437ef7 !important;
+}
+.react-datepicker .react-datepicker__day-name,
+.react-datepicker .react-datepicker__current-month,
+.react-datepicker .react-datepicker-time__header,
+.react-datepicker .react-datepicker-year-header,
+.react-datepicker .react-datepicker__day--keyboard-selected,
+.react-datepicker .react-datepicker__month-text--keyboard-selected,
+.react-datepicker .react-datepicker__quarter-text--keyboard-selected,
+.react-datepicker .react-datepicker__year-text--keyboard-selected {
+  color: #fff;
+}
+.react-datepicker .react-datepicker__year-read-view--down-arrow,
+.react-datepicker .react-datepicker__month-read-view--down-arrow,
+.react-datepicker .react-datepicker__month-year-read-view--down-arrow,
+.react-datepicker .react-datepicker__navigation-icon::before {
+  border-color: #fff;
+}
+.react-datepicker .react-datepicker__navigation {
+  border: none;
+  padding: 0;
+  top: 10px;
+}
+.react-datepicker .react-datepicker__current-month,
+.react-datepicker .react-datepicker-time__header,
+.react-datepicker .react-datepicker-year-header {
+  font-size: 1.7rem;
+}
+.react-datepicker .react-datepicker__header__dropdown {
+  margin: 10px 0 5px 0;
+}
+.react-datepicker
+  .react-datepicker__header__dropdown
+  .react-datepicker__month-dropdown-container,
+.react-datepicker
+  .react-datepicker__header__dropdown
+  .react-datepicker__year-dropdown-container {
+  margin: 0 5px;
+}
+.react-datepicker .react-datepicker__day-name,
+.react-datepicker .react-datepicker__day,
+.react-datepicker .react-datepicker__time-name {
+  width: 4rem;
+  line-height: 4rem;
+  font-size: 1.4rem !important;
+}
+.react-datepicker
+  .react-datepicker__time-container
+  .react-datepicker__time-list-item {
+  color: #272d37;
+  font-size: 1.7rem;
+}
+.react-datepicker
+  .react-datepicker__time-container
+  .react-datepicker__time-list-item.off {
+  display: none;
+}
+.react-datepicker
+  .react-datepicker__time-container
+  .react-datepicker__time-list-item--disabled {
+  display: none;
+}
+
+.section-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 30;
+}
+.section-popup .section-popup--top {
+  position: relative;
+  padding: 20px;
+  min-height: 68px;
+  border-bottom: 1px solid #dae0e6;
+  text-align: center;
+  font-size: 1.6rem;
+}
+.section-popup .section-popup--top h1 {
+  font-size: 1.6rem;
+}
+.section-popup .section-popup--top button {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+}
+.section-popup .section-popup--con .inner {
+  padding: 20px;
+  height: calc(100vh - 160px);
+  overflow-y: auto;
+}
+.section-popup .section-popup--con p {
+  padding-top: 10px;
+  line-height: 1.6;
+}
+.section-popup .btn-section-popup-close {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  border-top: 1px solid #dae0e6;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+@media (max-width: 1024px) {
+  .section-popup .btn-section-popup-close {
+    height: 60px;
+  }
+}
+
+.alert-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+.alert-popup .alert-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  background-color: #fff;
+  font-size: 1.4rem;
+}
+@media (max-width: 1024px) {
+  .alert-popup .alert-content {
+    width: 90%;
+  }
+}
+@media (max-width: 540px) {
+  .alert-popup .alert-content {
+    padding: 40px 20px;
+  }
+}
+.alert-popup .alert-button {
+  display: flex;
+  margin-top: 20px;
+}
+.alert-popup .alert-button.center {
+  justify-content: center;
+}
+.alert-popup .alert-button.right {
+  justify-content: flex-end;
+}
+.alert-popup .alert-button button {
+  display: inline-block;
+  padding: 6px 10px;
+  min-width: auto;
+  height: auto;
+  background: #fff;
+  color: #437ef7;
+  border: 1px solid #dae0e6;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.submit-state-wrap {
+  padding: 140px 10px 40px 10px;
+  border-radius: 20px;
+  position: relative;
+}
+.submit-state-wrap .tt {
+  display: block;
+  font-size: 3.5rem;
+  color: #272d37;
+  letter-spacing: -1px;
+  text-align: center;
+}
+@media (max-width: 450px) {
+  .submit-state-wrap .tt {
+    font-size: 2.5rem;
+  }
+}
+.submit-state-wrap.complete {
+  background: #f5faff;
+}
+.submit-state-wrap.complete:before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background: #437ef7;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+@media (max-width: 450px) {
+  .submit-state-wrap.complete:before {
+    width: 60px;
+    height: 60px;
+  }
+}
+.submit-state-wrap.complete:after {
+  content: '';
+  position: absolute;
+  top: 62px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  width: 33px;
+  height: 17px;
+  border: 7px solid #fff;
+  border-top: none;
+  border-right: none;
+  background: transparent;
+}
+@media (max-width: 450px) {
+  .submit-state-wrap.complete:after {
+    top: 57px;
+    width: 26px;
+    height: 10px;
+    border: 5px solid #fff;
+    border-top: none;
+    border-right: none;
+  }
+}
+.submit-state-wrap.failed {
+  background: #fff4f4;
+}
+.submit-state-wrap.failed:before {
+  content: '';
+  background: #ff7a7a;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}
+@media (max-width: 450px) {
+  .submit-state-wrap.failed:before {
+    width: 60px;
+    height: 60px;
+  }
+}
+.submit-state-wrap.failed .icon-failed:before,
+.submit-state-wrap.failed .icon-failed:after {
+  content: '';
+  width: 4px;
+  height: 37px;
+  position: absolute;
+  top: 62px;
+  left: 50%;
+  background: #fff;
+}
+@media (max-width: 450px) {
+  .submit-state-wrap.failed .icon-failed:before,
+  .submit-state-wrap.failed .icon-failed:after {
+    height: 30px;
+    top: 57px;
+  }
+}
+.submit-state-wrap.failed .icon-failed:before {
+  transform: translateX(-50%) rotate(-45deg);
+}
+.submit-state-wrap.failed .icon-failed:after {
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.order-status {
+  margin: 20px auto 10px auto;
+  padding: 40px 10px;
+  width: 95%;
+  background: #fff;
+  border-radius: 10px;
+}
+.order-status h5 {
+  display: block;
+  margin: 20px 0 5px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+.order-status ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+  color: #999;
+}
+.order-status ul li em {
+  width: 25%;
+  text-align: left;
+}
+.order-status ul li em:last-child {
+  width: 75%;
+  color: #000;
+  text-align: right;
+}
+.order-status .complete-txt {
+  margin: 30px 0;
+  padding: 0 10px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+.order-status .order-status-inner {
+  margin: 0 auto;
+  max-width: 640px;
+  border: 1px solid #dae0e6;
+  padding: 20px;
+}
+.order-status .order-status-inner p {
+  margin: 10px 0 0 0;
+  font-size: 1.6rem;
+  word-break: keep-all;
+}
+.order-status .order-status-inner p a {
+  font-weight: 700;
+}
+.order-status .order-payment em {
+  padding: 0 10px;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+.order-status .order-payment .price {
+  display: block;
+  padding: 0 0 10px 0;
+  color: #f00;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.service-order-info-sub-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #999;
+}
+@media (max-width: 640px) {
+  .service-order-info-sub-title {
+    font-size: 1.6rem;
+  }
+}
+
+.form-order-info-chk .form-view-title:first-child {
+  margin-top: 0;
+}
+
+.img_seat_info {
+  max-width: 100%;
+  margin: 0 auto;
+  width: 600px;
+}
+.img_seat_info .title {
+  display: block;
+  margin: 0 auto 10px auto;
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .img_seat_info .title {
+    font-size: 2rem;
+  }
+}
+.img_seat_info img {
+  width: 100%;
+}
+
+.seat-list-top {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .seat-list-top {
+    display: block;
+  }
+}
+
+.seat-icons {
+  display: flex;
+  justify-content: end;
+}
+.seat-icons > span {
+  margin-left: 30px;
+  font-size: 1.6rem;
+  color: #5a5757;
+  font-weight: 700;
+}
+@media (max-width: 640px) {
+  .seat-icons > span {
+    font-size: 1.4rem;
+  }
+}
+.seat-icons > span i {
+  margin-right: 10px;
+}
+@media (max-width: 768px) {
+  .seat-icons {
+    margin-top: 10px;
+  }
+}
+
+.icon-delivery,
+.icon-engineer {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+.icon-delivery.icon-delivery,
+.icon-engineer.icon-delivery {
+  background-image: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_delivery.svg');
+  background-color: #437ef7;
+}
+.icon-delivery.icon-engineer,
+.icon-engineer.icon-engineer {
+  background-image: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_engineer.svg');
+  background-color: #898989;
+}
+@media (max-width: 768px) {
+  .icon-delivery,
+  .icon-engineer {
+    width: 20px;
+    height: 20px;
+    background-size: 100%;
+  }
+}
+
+.icon-arrow-left-right {
+  margin: 0 5px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url('https://bodyfriend.speedgabia.com/img/bodyfriend/icon/icon_arrow_left_right.svg')
+    no-repeat center;
+  background-size: contain;
+}
+
+.afterinfo-tab-inner-cont,
+.transfer-tab-inner-cont {
+  margin-top: 60px;
+  font-family: 'bodyfriendM';
+}
+.afterinfo-tab-inner-cont h5,
+.transfer-tab-inner-cont h5 {
+  margin-bottom: 30px;
+  font-size: 3.6rem;
+  font-weight: 700;
+  text-align: center;
+}
+@media (max-width: 830px) {
+  .afterinfo-tab-inner-cont h5,
+  .transfer-tab-inner-cont h5 {
+    margin-bottom: 15px;
+    font-size: 3rem;
+  }
+}
+@media (max-width: 640px) {
+  .afterinfo-tab-inner-cont h5,
+  .transfer-tab-inner-cont h5 {
+    font-size: 2.4rem;
+  }
+}
+
+.afterinfo-tab-inner-cont .btn-faq {
+  width: 340px;
+}
+@media (max-width: 640px) {
+  .afterinfo-tab-inner-cont .btn-faq {
+    padding: 15px;
+    width: 200px;
+    height: auto;
+    font-size: 1.6rem;
+  }
+}
+
+.afterinfo-box-cont {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+}
+@media (max-width: 830px) {
+  .afterinfo-box-cont {
+    display: block;
+  }
+}
+.afterinfo-box-cont .afterinfo-box {
+  width: 50%;
+  border-bottom: 1px solid #dae0e6;
+}
+@media (max-width: 830px) {
+  .afterinfo-box-cont .afterinfo-box {
+    width: 100%;
+    border-bottom: 0;
+  }
+}
+.afterinfo-box-cont .afterinfo-box:nth-child(1) {
+  position: relative;
+}
+.afterinfo-box-cont .afterinfo-box:nth-child(1) .afterinfo-box-top {
+  border-radius: 0 0 0 10px;
+}
+@media (max-width: 830px) {
+  .afterinfo-box-cont .afterinfo-box:nth-child(1) .afterinfo-box-top {
+    border-radius: 10px;
+  }
+}
+.afterinfo-box-cont .afterinfo-box:nth-child(1) .afterinfo-box-mid:after {
+  content: '';
+  position: absolute;
+  top: 75px;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background: #dae0e6;
+}
+@media (max-width: 830px) {
+  .afterinfo-box-cont .afterinfo-box:nth-child(1) .afterinfo-box-mid:after {
+    display: none;
+  }
+}
+.afterinfo-box-cont .afterinfo-box:nth-child(2) .afterinfo-box-top {
+  border-radius: 0 0 10px 0;
+}
+@media (max-width: 830px) {
+  .afterinfo-box-cont .afterinfo-box:nth-child(2) .afterinfo-box-top {
+    border-radius: 10px;
+  }
+}
+.afterinfo-box-cont .afterinfo-box > div:last-child {
+  margin-bottom: 0;
+}
+.afterinfo-box-cont .afterinfo-box-top {
+  min-height: 75px;
+  text-align: center;
+  line-height: 75px;
+  background-color: #437ef7;
+  color: #fff;
+  font-size: 2rem;
+}
+.afterinfo-box-cont .afterinfo-box-top.membership {
+  background-color: #c4885b;
+}
+@media (max-width: 640px) {
+  .afterinfo-box-cont .afterinfo-box-top {
+    min-height: 55px;
+    line-height: 55px;
+    font-size: 1.6rem;
+  }
+}
+.afterinfo-box-cont .afterinfo-box-top.m {
+  min-height: 55px;
+}
+.afterinfo-box-cont .afterinfo-box-mid,
+.afterinfo-box-cont .afterinfo-box-bottom {
+  padding: 30px;
+}
+@media (max-width: 640px) {
+  .afterinfo-box-cont .afterinfo-box-mid,
+  .afterinfo-box-cont .afterinfo-box-bottom {
+    padding: 10px;
+  }
+}
+.afterinfo-box-cont .afterinfo-box-mid > div {
+  word-break: keep-all;
+}
+.afterinfo-box-cont .afterinfo-box-mid > div > strong {
+  display: block;
+  margin: 0 0 10px 0;
+  font-size: 2rem;
+}
+.afterinfo-box-cont .afterinfo-box-mid > div > ul {
+  margin-bottom: 25px;
+}
+.afterinfo-box-cont .afterinfo-box-mid > div > ul li {
+  font-size: 2rem;
+}
+.afterinfo-box-cont .afterinfo-box-mid > div > p {
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+.afterinfo-box-cont .afterinfo-box-mid > div span:last-child {
+  font-size: 2.4rem;
+}
+@media (max-width: 640px) {
+  .afterinfo-box-cont .afterinfo-box-mid > div > strong {
+    font-size: 1.6rem;
+  }
+  .afterinfo-box-cont .afterinfo-box-mid > div > ul li {
+    font-size: 1.4rem;
+  }
+  .afterinfo-box-cont .afterinfo-box-mid > div > p {
+    font-size: 1.4rem;
+  }
+  .afterinfo-box-cont .afterinfo-box-mid > div span:last-child {
+    font-size: 1.4rem;
+  }
+}
+.afterinfo-box-cont .btn-sit-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+.afterinfo-box-cont .btn-sit-price {
+  display: inline-block;
+  padding: 10px 50px 10px 10px;
+  min-width: auto;
+  height: auto;
+  background: #fff;
+  color: #437ef7;
+  border: 1px solid #437ef7;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  text-align: center;
+  cursor: pointer;
+  background: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_arrow_right_primary.svg')
+    no-repeat calc(100% - 10px) center;
+}
+
+.transfer-box-cont {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 640px) {
+  .transfer-box-cont {
+    display: block;
+  }
+}
+.transfer-box-cont .transfer-box {
+  width: calc(50% - 20px);
+  padding: 40px;
+  border: 1px solid #dae0e6;
+  border-radius: 10px;
+}
+@media (max-width: 640px) {
+  .transfer-box-cont .transfer-box {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+.transfer-box-cont .transfer-box > div:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 1024px) {
+  .transfer-box-cont.triple_box {
+    display: block;
+  }
+}
+.transfer-box-cont.triple_box .transfer-box {
+  width: calc(33.3% - 20px);
+}
+@media (max-width: 1024px) {
+  .transfer-box-cont.triple_box .transfer-box {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+.transfer-box-cont .transfer-box-bt {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  font-size: 1.8rem;
+  word-break: keep-all;
+}
+@media (max-width: 830px) {
+  .transfer-box-cont .transfer-box-bt {
+    font-size: 1.6rem;
+  }
+}
+.transfer-box-cont .transfer-box-bt:last-child {
+  margin-bottom: 0;
+}
+.transfer-box-cont .transfer-box-bt > span {
+  vertical-align: top;
+}
+.transfer-box-cont .transfer-box-bt > span:first-child {
+  width: 40%;
+  color: #7b7b7b;
+}
+.transfer-box-cont .transfer-box-bt > span:last-child {
+  width: clac(60%);
+  text-align: right;
+}
+.transfer-box-cont .transfer-box-bt .price-percent {
+  color: #f00;
+  margin-right: 10px;
+}
+.transfer-box-cont .transfer-box-top {
+  min-height: 75px;
+}
+.transfer-box-cont .transfer-box-top.m {
+  min-height: 55px;
+}
+.transfer-box-cont .transfer-box-top > p {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #437ef7;
+}
+@media (max-width: 830px) {
+  .transfer-box-cont .transfer-box-top > p {
+    font-size: 2rem;
+  }
+}
+.transfer-box-cont .transfer-box-top > p.transfer-box-sub-text {
+  position: relative;
+  color: #7b7b7b;
+  font-weight: 500;
+  font-size: 1.8rem;
+  padding-left: 20px;
+}
+@media (max-width: 830px) {
+  .transfer-box-cont .transfer-box-top > p.transfer-box-sub-text {
+    font-size: 1.6rem;
+  }
+}
+.transfer-box-cont .transfer-box-top > p.transfer-box-sub-text:before {
+  position: absolute;
+  content: '•';
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.transfer-box-cont .transfer-box-top.membership > p {
+  color: #c4885b;
+}
+.transfer-box-cont .transfer-box-top.membership > p.transfer-box-sub-text {
+  color: #7b7b7b;
+}
+.transfer-box-cont .transfer-box-top > p:last-child {
+  margin-bottom: 0;
+}
+.transfer-box-cont .transfer-box-mid {
+  margin: 25px 0;
+}
+.transfer-box-cont .transfer-box-mid > div {
+  word-break: keep-all;
+}
+.transfer-box-cont .transfer-box-mid > div > strong {
+  font-size: 2rem;
+}
+.transfer-box-cont .transfer-box-mid > div > p {
+  font-size: 2rem;
+}
+.transfer-box-cont .transfer-box-mid > div span:last-child {
+  font-size: 2.4rem;
+}
+@media (max-width: 830px) {
+  .transfer-box-cont .transfer-box-mid > div > strong {
+    font-size: 1.4rem;
+  }
+  .transfer-box-cont .transfer-box-mid > div > p {
+    font-size: 1.4rem;
+  }
+  .transfer-box-cont .transfer-box-mid > div span:last-child {
+    font-size: 1.8rem;
+  }
+}
+.transfer-box-cont .transfer-box-bottom {
+  padding-top: 20px;
+  min-height: 92px;
+  border-top: 1px dashed #dae0e6;
+  font-size: 1.8rem;
+}
+@media (max-width: 830px) {
+  .transfer-box-cont .transfer-box-bottom {
+    font-size: 1.4rem;
+  }
+}
+.transfer-box-cont .transfer-box-bottom > div {
+  margin-bottom: 10px;
+}
+@media (max-width: 830px) {
+  .transfer-box-cont .transfer-box-bottom > div {
+    padding-left: 10px;
+  }
+}
+.transfer-box-cont .transfer-box-bottom > div:last-child {
+  margin-bottom: 0 !important;
+}
+.transfer-box-cont .transfer-box-bottom > div p {
+  position: relative;
+  margin-left: 20px;
+  color: #7b7b7b;
+}
+.transfer-box-cont .transfer-box-bottom > div p:before {
+  position: absolute;
+  content: '•';
+  top: 0;
+  left: -20px;
+}
+
+.transfer-inner {
+  margin-top: 80px;
+  font-size: 1.8rem;
+}
+@media (max-width: 640px) {
+  .transfer-inner {
+    margin-top: 40px;
+    font-size: 1.4rem;
+  }
+}
+.transfer-inner .transfer_btn_inner {
+  margin-top: 120px;
+}
+.transfer-inner .transfer_btn_inner button {
+  padding: 20px 0;
+  min-width: 330px;
+  border-radius: 10px;
+  font-size: 2rem;
+}
+.transfer-inner .btn_border_primary {
+  color: #437ef7;
+  border: 1px solid #437ef7;
+}
+
+.bg-list-cont {
+  background-color: #f5f5f7;
+  padding: 25px 45px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+@media (max-width: 640px) {
+  .bg-list-cont {
+    margin: 10px 0;
+    padding: 25px;
+  }
+}
+.bg-list-cont h5 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+@media (max-width: 640px) {
+  .bg-list-cont h5 {
+    font-size: 1.6rem;
+  }
+}
+.bg-list-cont li {
+  font-size: 1.8rem;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+@media (max-width: 640px) {
+  .bg-list-cont li {
+    font-size: 1.4rem;
+  }
+}
+.bg-list-cont li:before {
+  position: absolute;
+  content: '•';
+  top: 0;
+  left: 0;
+}
+.bg-list-cont li:last-child {
+  margin-bottom: 0;
+}
+
+.state-napbu {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 40px;
+  background-color: #f5f5f7;
+  color: #a4a4a4;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+@media (max-width: 540px) {
+  .state-napbu {
+    padding: 4px 10px;
+    font-size: 1.4rem;
+  }
+}
+.state-napbu.on {
+  color: #fff;
+  background-color: #437ef7;
+}
+
+.payment-info {
+  font-size: 1.6rem;
+}
+.payment-info .payment-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+@media (max-width: 540px) {
+  .payment-info .payment-inner.pay-all-chk-wrap {
+    display: block;
+  }
+}
+.payment-info .payment-inner .total,
+.payment-info .payment-inner > h5 {
+  font-size: 2rem;
+}
+@media (max-width: 540px) {
+  .payment-info .payment-inner .total,
+  .payment-info .payment-inner > h5 {
+    font-size: 1.6rem;
+  }
+}
+.payment-info .btn-more-minap {
+  padding: 0 20px 0 0;
+  background: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_arrow_right.svg')
+    no-repeat right center;
+  border: 0;
+  font-size: 1.6rem;
+  color: #b4b4b4;
+}
+.payment-info .pay-folder-wrap,
+.payment-info .list-cnt {
+  margin: 0 20px;
+  padding: 30px 0 0 0;
+  border-top: 1px solid #dae0e6;
+  font-size: 1.8rem;
+}
+@media (max-width: 540px) {
+  .payment-info .pay-folder-wrap,
+  .payment-info .list-cnt {
+    margin: 0 10px;
+    font-size: 1.6rem;
+  }
+}
+.payment-info .pay-folder-wrap dl,
+.payment-info .list-cnt dl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 540px) {
+  .payment-info .pay-folder-wrap dl,
+  .payment-info .list-cnt dl {
+    display: block;
+  }
+  .payment-info .pay-folder-wrap dl dd,
+  .payment-info .list-cnt dl dd {
+    margin-top: 10px;
+    text-align: right;
+  }
+  .payment-info .pay-folder-wrap dl dd strong,
+  .payment-info .list-cnt dl dd strong {
+    font-size: 1.8rem;
+  }
+}
+.payment-info .pay-folder-wrap dl dt,
+.payment-info .list-cnt dl dt {
+  font-weight: 700;
+}
+.payment-info .list-cnt dl {
+  margin-bottom: 35px;
+}
+.payment-info .list-cnt dl .state-napbu {
+  margin-left: 20px;
+}
+@media (max-width: 540px) {
+  .payment-info .list-cnt dl .state-napbu {
+    marign-left: 10px;
+  }
+}
+.payment-info .pay-folder-wrap .pay-folder {
+  display: block;
+  position: relative;
+  padding: 0 50px 20px 0;
+  cursor: pointer;
+}
+@media (max-width: 640px) {
+  .payment-info .pay-folder-wrap .pay-folder {
+    padding: 0 40px 20px 0;
+  }
+}
+.payment-info .pay-folder-wrap .pay-folder:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: url('https://bodyfriend.speedgabia.com/img/cs/icon/arrow_grey_down.svg')
+    no-repeat right 0/30px;
+}
+@media (max-width: 640px) {
+  .payment-info .pay-folder-wrap .pay-folder:after {
+    top: -5px;
+  }
+}
+.payment-info .pay-folder-wrap .pay-folder.on:after {
+  transform: rotate(180deg);
+}
+.payment-info .pay-folder-wrap .pay-folder .folder-btn {
+  display: block;
+  width: 100%;
+  font-size: 1.8rem;
+  text-align: left;
+  border: 0;
+}
+@media (max-width: 640px) {
+  .payment-info .pay-folder-wrap .pay-folder .folder-btn {
+    font-size: 1.4rem;
+  }
+}
+.payment-info .pay-folder-wrap .pay-folder .folder-btn span {
+  display: inline-block;
+}
+.payment-info .pay-folder-wrap .pay-folder .folder-btn .tt {
+  width: 120px;
+  font-weight: 700;
+}
+@media (max-width: 450px) {
+  .payment-info .pay-folder-wrap .pay-folder .folder-btn .tt {
+    width: 90px;
+  }
+}
+.payment-info .pay-folder-wrap .pay-folder .folder-btn .cnt {
+  color: #7b7b7b;
+}
+.payment-info .pay-folder-wrap .pay-folder .folder-btn .price {
+  float: right;
+}
+.payment-info .pay-folder-wrap .pay-folder .folder-con {
+  padding: 20px 0 20px 130px;
+  font-size: 1.6rem;
+  cursor: default;
+}
+.payment-info .pay-folder-wrap .pay-folder .folder-con dl {
+  position: relative;
+  margin-bottom: 5px;
+  padding-left: 20px;
+}
+.payment-info .pay-folder-wrap .pay-folder .folder-con dl:before,
+.payment-info .pay-folder-wrap .pay-folder .folder-con dl:after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  background: #7b7b7b;
+}
+.payment-info .pay-folder-wrap .pay-folder .folder-con dl:before {
+  width: 1px;
+  height: 7px;
+  top: 5px;
+}
+.payment-info .pay-folder-wrap .pay-folder .folder-con dl:after {
+  width: 7px;
+  height: 1px;
+  top: 12px;
+}
+.payment-info .pay-folder-wrap .pay-folder .folder-con dt,
+.payment-info .pay-folder-wrap .pay-folder .folder-con dd {
+  font-weight: 400;
+  color: #7b7b7b;
+}
+.payment-info .change-pay-cnt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.payment-info .change-pay-cnt .pay-cnt-option {
+  display: contents;
+  font-size: 2rem;
+}
+@media (max-width: 640px) {
+  .payment-info .change-pay-cnt .pay-cnt-option {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 540px) {
+  .payment-info .change-pay-cnt .pay-cnt-option {
+    justify-content: flex-end;
+  }
+}
+.payment-info .change-pay-cnt .pay-cnt-option > div {
+  position: relative;
+  margin: 0 20px;
+  border-radius: 10px;
+  border: 1px solid #dae0e6;
+  width: 170px;
+}
+@media (max-width: 640px) {
+  .payment-info .change-pay-cnt .pay-cnt-option > div {
+    margin: 0 10px;
+    border-radius: 4px;
+    width: 140px;
+  }
+}
+.payment-info .change-pay-cnt .pay-cnt-option > div input,
+.payment-info .change-pay-cnt .pay-cnt-option > div button {
+  height: 55px;
+  line-height: 55px;
+  font-size: 2rem;
+}
+@media (max-width: 640px) {
+  .payment-info .change-pay-cnt .pay-cnt-option > div input,
+  .payment-info .change-pay-cnt .pay-cnt-option > div button {
+    font-size: 1.6rem;
+    height: 35px;
+    line-height: 35px;
+  }
+}
+.payment-info .change-pay-cnt .pay-cnt-option > div button {
+  position: absolute;
+  width: 44px;
+  border: 0;
+}
+@media (max-width: 640px) {
+  .payment-info .change-pay-cnt .pay-cnt-option > div button {
+    width: 35px;
+    background-size: 20px !important;
+  }
+}
+.payment-info .change-pay-cnt .pay-cnt-option > div button.minus {
+  left: 0;
+  background: url('https://bodyfriend.speedgabia.com/img/bodyfriend/icon/icon_minus.svg')
+    no-repeat center;
+}
+.payment-info .change-pay-cnt .pay-cnt-option > div button.plus {
+  right: 0;
+  background: url('https://bodyfriend.speedgabia.com/img/bodyfriend/icon/icon_plus.svg')
+    no-repeat center;
+}
+.payment-info .change-pay-cnt .pay-cnt-option > div input[type='number'] {
+  margin-left: 44px;
+  padding: 0 10px 0 20px;
+  border: 0;
+  color: #272d37;
+  font-weight: 700;
+  width: calc(100% - 88px);
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .payment-info .change-pay-cnt {
+    display: block;
+  }
+  .payment-info .change-pay-cnt .pay-all-chk {
+    margin-bottom: 20px;
+    text-align: right;
+  }
+  .payment-info .change-pay-cnt .pay-cnt-option {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.payment-product-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #dae0e6;
+  background: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_radio_off.svg')
+    no-repeat left 11px;
+  cursor: pointer;
+}
+.payment-product-list li.on {
+  background: url('https://bodyfriend.speedgabia.com/img/cs/icon/icon_radio_on.svg')
+    no-repeat left 12px;
+}
+.payment-product-list li .product-name {
+  margin-left: 30px;
+  font-size: 1.6rem;
+}
+.payment-product-list li .info {
+  display: flex;
+  margin: 15px 0;
+}
+.payment-product-list li .thumbnail {
+  margin-right: 20px;
+  max-width: 80px;
+  vertical-align: top;
+}
+@media (max-width: 768px) {
+  .payment-product-list li .thumbnail {
+    margin: 0;
+  }
+}
+.payment-product-list li .payinfo-item {
+  width: calc(100% - 100px);
+}
+@media (max-width: 768px) {
+  .payment-product-list li .payinfo-item {
+    width: 100%;
+  }
+}
+.payment-product-list li .payinfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+@media (max-width: 768px) {
+  .payment-product-list li .payinfo {
+    font-size: 1.4rem;
+  }
+}
+.payment-product-list li .payinfo dd {
+  text-align: right;
+}
+.payment-product-list li .payinfo span {
+  padding: 0 5px;
+}
+.payment-product-list li .payinfo i {
+  display: inline-block;
+  margin: 0 2px;
+  width: 1px;
+  height: 10px;
+  background: #dae0e6;
+}
+
+.payinfo-user {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 80px auto;
+  width: 60%;
+}
+@media (max-width: 640px) {
+  .payinfo-user {
+    width: 80%;
+  }
+}
+.payinfo-user .payinfo-inner {
+  position: relative;
+  text-align: center;
+}
+.payinfo-user .payinfo-inner dt {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+}
+@media (max-width: 540px) {
+  .payinfo-user .payinfo-inner dt {
+    font-size: 1.8rem;
+  }
+}
+.payinfo-user .payinfo-inner dd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 115px;
+  height: 115px;
+  border-radius: 20px;
+  background: #f3f3f3;
+  font-size: 2.4rem;
+}
+@media (max-width: 540px) {
+  .payinfo-user .payinfo-inner dd {
+    width: 90px;
+    height: 90px;
+    font-size: 2rem;
+  }
+}
+.payinfo-user .payinfo-inner dd strong {
+  font-size: 3.4rem;
+}
+@media (max-width: 540px) {
+  .payinfo-user .payinfo-inner dd strong {
+    font-size: 2.8rem;
+  }
+}
+.payinfo-user .payinfo-inner.minap dd {
+  color: #437ef7;
+}
+
+.font_tabs {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 20px 0;
+  float: inherit;
+  width: 100%;
+  transition: top 0.3s;
+}
+
+.font_tabs.scroll {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  background: #fff;
+  padding: 0;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  width: 1200px;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+@media (max-width: 1024px) {
+  .font_tabs.scroll.cs {
+    top: 75px;
+  }
+  .font_tabs.scroll.membership {
+    top: 0;
+  }
+}
+
+.membership_page .font_tabs.scroll {
+  top: 0;
+}
+
+.font_tabs button {
+  width: 20%;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  text-indent: -9999px;
+  height: 64px;
+}
+@media (max-width: 640px) {
+  .font_tabs button {
+    height: 35px;
+  }
+}
+@media (max-width: 450px) {
+  .font_tabs button {
+    height: auto;
+  }
+}
+
+.font_tabs button.sarangche {
+  background-image: url(https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/tab/btn-love_nor.png);
+}
+
+.font_tabs button.sarangche.on {
+  background-image: url(https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/tab/btn-love_sel.png);
+}
+
+.font_tabs button.mirae {
+  background-image: url(https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/tab/btn-future_nor.png);
+}
+
+.font_tabs button.mirae.on {
+  background-image: url(https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/tab/btn-future_sel.png);
+}
+
+.font_tabs button.happy {
+  background-image: url(https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/tab/btn-happy_nor.png);
+}
+
+.font_tabs button.happy.on {
+  background-image: url(https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/tab/btn-happy_sel.png);
+}
+
+.font_tabs button.health {
+  background-image: url(https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/tab/btn-health_nor.png);
+}
+
+.font_tabs button.health.on {
+  background-image: url(https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/tab/btn-health_sel.png);
+}
+
+.font_tabs button.eco {
+  background-image: url(https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/tab/btn-eco_nor.png);
+}
+
+.font_tabs button.eco.on {
+  background-image: url(https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/tab/btn-eco_sel.png);
+}
+
+.tab_contents_fonts .tab_content {
+  display: none;
+}
+
+.tab_contents_fonts .tab_content.on {
+  display: block;
+}
+
+.fonts__article {
+  margin-top: 0;
+}
+
+.fonts__article img {
+  max-width: 100%;
+}
+
+.tab_content .group_inner {
+  padding: 300px 168px;
+}
+
+.tab_content.eco .group_inner {
+  background-color: #21423a;
+}
+
+.tab_content.health .group_inner {
+  background-color: #b86fff;
+}
+
+.tab_content.happy .group_inner {
+  background-color: #fef6d1;
+}
+
+.tab_content.mirae .group_inner {
+  padding: 150px 60px;
+  background-color: #171f5e;
+}
+
+.tab_content.sarangche .group_inner {
+  padding: 177px 90px 177px;
+  background-color: #f7f7f7;
+  border-radius: 60px;
+}
+
+.fonts__other {
+  text-align: center;
+}
+
+.fonts__article--kr {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+/*글씨체 적용*/
+.tab_content .group_inner i {
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.tab_content.eco .group_inner i {
+  margin-right: 11px;
+  margin-bottom: 18px;
+  line-height: 1.05;
+  color: #ffe8d2;
+  font-style: normal;
+  font-size: 6.5rem;
+  font-family: 'bodyfriendEco';
+}
+
+.tab_content.health .group_inner i {
+  margin-right: 10px;
+  margin-bottom: 18px;
+  line-height: 1.05;
+  color: #36007a;
+  font-style: normal;
+  font-size: 6.3rem;
+  font-family: 'bodyfriendHealth';
+}
+
+.tab_content.happy .group_inner i {
+  margin-right: 13px;
+  margin-bottom: 25px;
+  line-height: 1.05;
+  font-style: normal;
+  font-size: 6.3rem;
+  color: #000;
+  font-family: 'bodyfriendHappy';
+}
+
+.tab_content.mirae .group_inner i {
+  display: inline-block;
+  margin-right: 16px;
+  margin-bottom: 25px;
+  line-height: 1.05;
+  font-style: normal;
+  font-size: 8.5rem;
+  color: #fff;
+  font-family: 'bodyfriendFuture';
+}
+
+.tab_content.sarangche .group_inner i,
+.tab_content.sarangche .group_inner em {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 39px;
+  line-height: 1.05;
+  font-style: normal;
+  font-size: 6rem;
+  color: #37353a;
+}
+
+.tab_content.sarangche .group_inner .light i {
+  margin-bottom: 3vw;
+  font-family: 'bodyfriendLOVE_Light';
+}
+
+.tab_content.sarangche .group_inner .bold i {
+  margin-bottom: 3vw;
+  font-family: 'bodyfriendLOVE_Bold';
+}
+
+.tab_content.eco .fonts__other i,
+.tab_content.health .fonts__other i {
+  margin-right: 18px;
+}
+
+.tab_content.eco .lower i,
+.tab_content.eco .num_simbol > i {
+  margin-right: 26px;
+}
+
+.tab_content.health .lower i,
+.tab_content.health .num_simbol > i {
+  margin-right: 23px;
+}
+
+.tab_content.happy .lower i,
+.tab_content.happy .num_simbol > i {
+  margin-right: 22px;
+}
+
+.tab_content.eco .group_inner i:hover,
+.tab_content.eco .group_inner i:active {
+  color: #b3ffb3;
+}
+
+.tab_content.health .group_inner i:hover,
+.tab_content.health .group_inner i:active {
+  color: #00ffff;
+}
+
+.tab_content.happy .group_inner i:hover,
+.tab_content.happy .group_inner i:active {
+  color: #ff6904;
+}
+
+.tab_content.mirae .group_inner i:hover,
+.tab_content.mirae .group_inner i:active {
+  color: #64ffff;
+}
+
+.tab_content.sarangche .group_inner i:hover,
+.tab_content.sarangche .group_inner i:active,
+.tab_content.sarangche .group_inner em:hover,
+.tab_content.sarangche .group_inner em:active {
+  color: #ea7898;
+}
+
+.fonts__article--other {
+  text-align: center;
+}
+
+.fonts__article--other > p {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+.fonts__other i:last-child {
+  margin-right: 0;
+}
+
+.fonts__article_group .lower i {
+  text-transform: lowercase;
+}
+
+.tab_content .fonts__subtt {
+  display: block;
+  margin-top: 240px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.tab_content.eco .fonts__subtt {
+  font-size: 2.5rem;
+  color: #b3ffb3;
+}
+
+.tab_content.health .fonts__subtt {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.tab_content.happy .fonts__subtt {
+  font-size: 3rem;
+  color: #000;
+}
+
+.tab_content.mirae .fonts__subtt {
+  font-size: 2.1rem;
+  color: #fff;
+}
+
+.tab_content.sarangche .fonts__subtt {
+  font-size: 2.1rem;
+  color: #37353a;
+}
+
+.tab_content .group_inner > .fonts__subtt {
+  margin-top: 0;
+}
+
+/*폰트 다운로드*/
+.font__download {
+  position: relative;
+}
+
+.font__download--btn a {
+  display: block;
+  text-indent: -9999px;
+}
+
+.eco__download--btn {
+  margin: 50px auto 0 auto;
+  width: 390px;
+  height: 105px;
+  background: url('https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/eco/BF_eco_download_nor.png')
+    no-repeat center;
+  background-size: 100%;
+}
+
+.eco__download--btn:active,
+.eco__download--btn:hover {
+  background-image: url('https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/eco/BF_eco_download_sel.png');
+}
+
+.health__download--btn {
+  margin: 50px auto 0 auto;
+  width: 390px;
+  height: 135px;
+  background: url('https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/health/BF_health_download_nor.png')
+    no-repeat center;
+  background-size: 100%;
+}
+
+.health__download--btn:active,
+.health__download--btn:hover {
+  background-image: url('https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/health/BF_health_download_sel.png');
+  background-size: 100%;
+}
+
+.happy__download--btn,
+.happy__download--btn:hover,
+.happy__download--btn:active {
+  margin: 50px auto 0 auto;
+  width: 397px;
+  height: 116px;
+  background: url('https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/happy/BF_happy_download.webp')
+    no-repeat;
+  background-size: 100%;
+}
+
+.mirae__download--btn,
+.mirae__download--btn:hover,
+.mirae__download--btn:active {
+  margin: 50px auto 0 auto;
+  width: 415px;
+  height: 123px;
+  background: url('https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/mirae/btn_font_future.webp')
+    no-repeat;
+  background-size: 100%;
+}
+
+.tab_content.sarangche .font__download--btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.sarangche__download--btnLight {
+  overflow: hidden;
+  width: 353px;
+  height: 77px;
+  margin-right: 90px;
+  background: url('https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/sarangche/btn_font_02.png')
+    no-repeat;
+}
+
+.sarangche__download--btnBold {
+  overflow: hidden;
+  width: 353px;
+  height: 77px;
+  background: url('https://bodyfriend.speedgabia.com/img/bodyfriend/company/fonts/sarangche/btn_font_01.png')
+    no-repeat;
+}
+
+@media all and (max-width: 1200px) {
+  .font_tabs.scroll {
+    width: 100%;
+  }
+}
+@media all and (max-width: 1180px) {
+  /* .font_tabs.scroll {
+      top: 44px;
+  } */
+}
+@media all and (max-width: 1024px) {
+  .font_tabs a {
+    height: 58px;
+  }
+  .tab_content .group_inner {
+    padding: 100px 80px;
+  }
+  .tab_content .fonts__subtt {
+    margin: 120px auto 40px auto;
+  }
+  .tab_content.eco .group_inner i {
+    margin-right: 13px;
+  }
+  .tab_content.eco .fonts__other i,
+  .tab_content.health .fonts__other i {
+    margin-right: 10px;
+  }
+  .tab_content.eco .lower i,
+  .tab_content.eco .num_simbol > i {
+    margin-right: 15px;
+  }
+  .tab_content.health .group_inner i {
+    margin-right: 11px;
+  }
+  .tab_content.happy .group_inner i {
+    margin-right: 16px;
+  }
+  .tab_content.happy .lower i,
+  .tab_content.happy .num_simbol > i {
+    margin-right: 14px;
+  }
+  .tab_content.mirae .group_inner i {
+    margin-right: 12px;
+    font-size: 7.5rem;
+  }
+  .tab_content.sarangche .group_inner i,
+  .tab_content.sarangche .group_inner em {
+    margin-right: 10px;
+    font-size: 4.9rem;
+  }
+  .font__download {
+    margin: 120px 0 !important;
+  }
+}
+@media all and (max-width: 830px) {
+  .font_tabs a {
+    height: 49px;
+  }
+  .tab_content.sarangche .group_inner {
+    padding: 100px 40px;
+    border-radius: 40px;
+  }
+  .tab_content.eco .group_inner i {
+    margin-right: 10px;
+    font-size: 5.3rem;
+  }
+  .tab_content.health .group_inner i {
+    margin-right: 8px;
+    font-size: 5rem;
+  }
+  .tab_content.happy .group_inner i {
+    margin-right: 10px;
+    font-size: 5.1rem;
+  }
+  .tab_content.mirae .group_inner i {
+    margin-right: 10px;
+    font-size: 5.7rem;
+  }
+  .tab_content.sarangche .group_inner i,
+  .tab_content.sarangche .group_inner em {
+    font-size: 4rem;
+  }
+  .fonts__article img.mt270,
+  .fonts__article img.mt240 {
+    margin-top: 60px !important;
+  }
+  .fonts__article img.mb240 {
+    margin-bottom: 60px !important;
+  }
+  .tab_content.sarangche .font__download--btn {
+    flex-direction: column;
+  }
+  .sarangche__download--btnLight {
+    margin-right: 0;
+  }
+}
+@media all and (max-width: 768px) {
+  .font_tabs a {
+    height: 46px;
+  }
+  .tab_content .group_inner {
+    padding: 90px 60px;
+  }
+  .tab_content.eco .group_inner i {
+    font-size: 4.8rem;
+  }
+  .tab_content.health .group_inner i {
+    font-size: 4.8rem;
+  }
+  .tab_content.happy .group_inner i {
+    font-size: 4.9rem;
+  }
+  .tab_content.mirae .group_inner i {
+    font-size: 5.2rem;
+  }
+  .tab_content.sarangche .group_inner i,
+  .tab_content.sarangche .group_inner em {
+    font-size: 3.6rem;
+  }
+  .eco__download--btn {
+    width: 252px;
+    height: 70px;
+  }
+  .health__download--btn {
+    width: 234px;
+    height: 70px;
+  }
+  .happy__download--btn,
+  .happy__download--btn:hover,
+  .happy__download--btn:active {
+    width: 230px;
+    height: 70px;
+  }
+  .mirae__download--btn,
+  .mirae__download--btn:hover,
+  .mirae__download--btn:active {
+    width: 245px;
+    height: 70px;
+  }
+  .sarangche__download--btnLight,
+  .sarangche__download--btnBold {
+    display: inline-block;
+    margin: 10px auto;
+    background-size: 100%;
+    width: 290px;
+    height: 65px;
+  }
+}
+@media all and (max-width: 640px) {
+  .font_tabs.scroll a {
+    width: 33.33%;
+    height: 9.5vw;
+  }
+  .tab_content .fonts__subtt {
+    margin: 60px auto 20px auto;
+    font-size: 1.7rem !important;
+  }
+  .tab_content.eco .group_inner i {
+    font-size: 3.6rem;
+  }
+  .tab_content.health .group_inner i {
+    font-size: 3.7rem;
+  }
+  .tab_content.happy .group_inner i {
+    margin-right: 12px;
+    font-size: 3.4rem;
+  }
+  .tab_content.mirae .group_inner i {
+    margin-right: 10px;
+    font-size: 3.8rem;
+  }
+  .tab_content.sarangche .group_inner i,
+  .tab_content.sarangche .group_inner em {
+    margin-right: 5px;
+    font-size: 2.9rem;
+  }
+}
+@media all and (max-width: 540px) {
+  .tab_content .group_inner {
+    padding: 90px 40px;
+  }
+  .tab_content.sarangche .group_inner .light,
+  .tab_content.sarangche .group_inner .bold {
+    text-align: center;
+  }
+  .tab_content.mirae .group_inner i,
+  .tab_content.happy .group_inner i,
+  .tab_content.health .group_inner i,
+  .tab_content.eco .group_inner i {
+    font-size: 7.5rem;
+  }
+  .tab_content.sarangche .group_inner i,
+  .tab_content.sarangche .group_inner em {
+    margin-right: 10px;
+    font-size: 5.6rem;
+  }
+  .tab_content.mirae .fonts__article--kr i {
+    font-size: 6.2rem;
+  }
+  .tab_content.happy .fonts__article--kr i {
+    font-size: 6.3rem;
+  }
+  .tab_content.health .fonts__article--kr i,
+  .tab_content.eco .fonts__article--kr i {
+    font-size: 6.5rem;
+  }
+  .tab_content.eco .group_inner i:nth-child(13n),
+  .tab_content.health .group_inner i:nth-child(13n),
+  .tab_content.happy .group_inner i:nth-child(13n),
+  .tab_content.mirae .group_inner i:nth-child(13n),
+  .tab_content.sarangche .group_inner i:nth-child(13n),
+  .tab_content.sarangche .group_inner em :nth-child(13n) {
+    margin-right: 10px;
+  }
+  .tab_content.mirae .fonts__article--kr i:nth-child(7n),
+  .tab_content.health .fonts__article--kr i:nth-child(7n),
+  .tab_content.eco .fonts__article--kr i:nth-child(7n) {
+    margin-right: 0;
+  }
+  .fonts__article img.mt270,
+  .fonts__article img.mt240 {
+    margin-top: 40px !important;
+  }
+}
+@media all and (max-width: 414px) {
+  .tab_content.mirae .group_inner {
+    padding: 100px 60px;
+  }
+  .tab_content.sarangche .group_inner {
+    border-radius: 20px;
+  }
+  .tab_content.mirae .group_inner i,
+  .tab_content.happy .group_inner i,
+  .tab_content.health .group_inner i,
+  .tab_content.eco .group_inner i {
+    font-size: 3rem;
+  }
+  .tab_content.health .fonts__article--kr i,
+  .tab_content.eco .fonts__article--kr i {
+    font-size: 4.3rem;
+  }
+  .tab_content.happy .fonts__article--kr i {
+    font-size: 3.7rem;
+  }
+  .tab_content.mirae .fonts__article--kr i {
+    font-size: 4rem;
+  }
+  .tab_content.sarangche .group_inner i,
+  .tab_content.sarangche .group_inner em {
+    font-size: 3.4rem;
+  }
+}
+@media all and (max-width: 375px) {
+  .tab_content .fonts__subtt {
+    font-size: 1.4rem !important;
+  }
+  .tab_content.health .group_inner,
+  .tab_content.happy .group_inner {
+    padding: 90px 20px;
+  }
+  .tab_content.sarangche .group_inner {
+    padding: 100px 10px;
+  }
+  .tab_content.mirae .group_inner {
+    padding: 100px 40px;
+  }
+  .tab_content.eco .fonts__article--kr i {
+    font-size: 3.7rem;
+  }
+  .tab_content.happy .fonts__article--kr i {
+    font-size: 3.2rem;
+  }
+  .tab_content.happy .fonts__article--kr i {
+    font-size: 3.9rem;
+  }
+}
+@media all and (max-width: 360px) {
+  .tab_content.health .fonts__article--kr i {
+    font-size: 4.1rem;
+  }
+  .tab_content.eco .fonts__article--kr i {
+    font-size: 3.4rem;
+  }
+}
+.call-info-inner {
+  margin: 0 auto;
+  width: 1200px;
+}
+@media (max-width: 1200px) {
+  .call-info-inner {
+    padding: 0 30px;
+    width: 100%;
+  }
+}
+
+.terms-wrap {
+  padding: 60px;
+}
+@media (max-width: 640px) {
+  .terms-wrap {
+    padding: 20px;
+  }
+}
+
+.terms {
+  border: 1px solid #dae0e6;
+  padding: 20px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+@media (max-width: 450px) {
+  .terms {
+    padding: 10px;
+    font-size: 1.2rem !important;
+  }
+}
+.terms h3,
+.terms h4 {
+  padding: 30px 0 5px;
+}
+.terms p {
+  font-weight: 700;
+}
+.terms ul {
+  margin-left: 15px;
+  text-indent: -15px;
+}
+.terms ul li > p {
+  margin-top: 7px;
+  text-indent: 0;
+}
+.terms ul li a {
+  text-indent: 0;
+}
+.terms ul li > ul > li {
+  padding: 0;
+  line-height: 20px;
+}
+.terms ul li i {
+  position: relative;
+  top: -2px;
+  margin-right: 3px;
+}
+.terms em {
+  display: block;
+  text-indent: -16px;
+  margin-left: 16px;
+  margin-top: 10px;
+}
+.terms dl dt {
+  margin-top: 10px;
+  font-weight: 700;
+}
+.terms table.polices_table th {
+  background-color: #f5f5f7;
+  font-weight: 700;
+  text-align: center;
+}
+.terms table.polices_table td {
+  text-align: left;
+}
+.terms table.polices_table th,
+.terms table.polices_table td {
+  padding: 7px;
+  border: 1px solid #dae0e6;
+}
+@media (max-width: 640px) {
+  .terms table.polices_table th,
+  .terms table.polices_table td {
+    width: auto !important;
+    word-break: keep-all;
+  }
+}
+@media (max-width: 450px) {
+  .terms table.polices_table th,
+  .terms table.polices_table td {
+    font-size: 1rem !important;
+  }
+}
+
+.online-wrap {
+  background-color: #f5f5f7;
+  padding: 0 0 60px 0;
+}
+.online-wrap .col-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.online-wrap .col-group.row1 > .col {
+  width: 100%;
+}
+.online-wrap .col-group.row2 > .col {
+  width: calc(50% - 8px);
+}
+.online-wrap .online-wrap-inner {
+  margin: 0 auto;
+  width: 640px;
+}
+@media (max-width: 640px) {
+  .online-wrap .online-wrap-inner {
+    width: 100%;
+  }
+}
+.online-wrap .online-wrap-inner .top {
+  position: relative;
+  padding: 40px 40px 80px 40px;
+  background: url('https://bodyfriend.speedgabia.com/img/onlineService/main/bg_main-min.jpg')
+    no-repeat;
+  background-size: 105%;
+  background-position: center -20px;
+}
+@media (max-width: 640px) {
+  .online-wrap .online-wrap-inner .top {
+    padding: 20px 20px 40px 20px;
+    height: 275px;
+  }
+}
+@media (max-width: 450px) {
+  .online-wrap .online-wrap-inner .top {
+    height: 240px;
+  }
+}
+.online-wrap .online-wrap-inner .top:after {
+  content: '';
+  position: absolute;
+  right: 25px;
+  bottom: 40px;
+  width: 200px;
+  height: 215px;
+  background: url('https://bodyfriend.speedgabia.com/img/onlineService/main/main_figure-min.png')
+    no-repeat center/100%;
+}
+@media (max-width: 450px) {
+  .online-wrap .online-wrap-inner .top:after {
+    width: 100px;
+    height: 111px;
+  }
+}
+.online-wrap .online-wrap-inner .top .logo {
+  display: block;
+  margin-bottom: 30px;
+  width: 200px;
+}
+@media (max-width: 640px) {
+  .online-wrap .online-wrap-inner .top .logo {
+    width: 155px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 450px) {
+  .online-wrap .online-wrap-inner .top .logo {
+    width: 120px;
+  }
+}
+@media (max-width: 320px) {
+  .online-wrap .online-wrap-inner .top .logo {
+    margin-bottom: 10px;
+    width: 95px;
+  }
+}
+.online-wrap .online-wrap-inner .top .logo img {
+  width: 100%;
+}
+@media (max-width: 640px) {
+  .online-wrap .online-wrap-inner .top .title {
+    width: 245px;
+  }
+  .online-wrap .online-wrap-inner .top .title:after {
+    width: 120px;
+    height: 130px;
+  }
+}
+@media (max-width: 450px) {
+  .online-wrap .online-wrap-inner .top .title {
+    width: 200px;
+  }
+}
+.online-wrap .online-wrap-inner .top p {
+  margin-top: 30px;
+  font-size: 2.4rem;
+  color: #fff;
+}
+@media (max-width: 640px) {
+  .online-wrap .online-wrap-inner .top p {
+    margin-top: 20px;
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 450px) {
+  .online-wrap .online-wrap-inner .top p {
+    font-size: 1.4rem;
+  }
+}
+.online-wrap .online-wrap-inner .con {
+  position: relative;
+  margin-top: -40px;
+  padding: 10px 35px 35px 35px;
+  border-radius: 60px 60px 0 0;
+  background: #fff;
+}
+@media (max-width: 640px) {
+  .online-wrap .online-wrap-inner .con {
+    padding: 10px 20px 20px 20px;
+    border-radius: 35px 35px 0 0;
+  }
+}
+.online-wrap .online-wrap-inner .con .col > p {
+  position: relative;
+  padding-left: 20px;
+  margin: 35px 0 20px 0;
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-family: 'bodyfriendM';
+}
+@media (max-width: 640px) {
+  .online-wrap .online-wrap-inner .con .col > p {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+  }
+}
+.online-wrap .online-wrap-inner .con .col > p:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #437ef7;
+  border-radius: 50%;
+}
+.online-wrap .online-wrap-inner .con .link-items li {
+  padding: 4px;
+}
+.online-wrap .online-wrap-inner .con .link-items li a {
+  display: block;
+  text-align: center;
+  border: 1px solid #dae0e6;
+  border-radius: 15px;
+  padding: 22px 0;
+  font-size: 20px;
+  box-shadow: 0px 0px 10.77067px 0px rgba(0, 0, 0, 0.05);
+}
+@media (max-width: 640px) {
+  .online-wrap .online-wrap-inner .con .link-items li a {
+    padding: 15px 0;
+    border-radius: 10px;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 320px) {
+  .online-wrap .online-wrap-inner .con .link-items li a {
+    padding: 15px 0;
+    font-size: 1.2rem;
+  }
+}
+.online-wrap .online-wrap-inner .con .link-items li a.disabled {
+  color: #dbdbdb;
+}
+.online-wrap .online-wrap-inner .callcenter-time {
+  margin-top: 40px;
+  border-top: 1px solid #dae0e6;
+  padding: 30px 0;
+}
+@media (max-width: 640px) {
+  .online-wrap .online-wrap-inner .callcenter-time {
+    margin-top: 20px;
+    padding: 20px 0;
+  }
+}
+.online-wrap .online-wrap-inner .callcenter-time h3 {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+@media (max-width: 640px) {
+  .online-wrap .online-wrap-inner .callcenter-time h3 {
+    font-size: 1.4rem;
+  }
+}
+.online-wrap .online-wrap-inner .callcenter-time p {
+  font-size: 1.4rem;
+}
+@media (max-width: 640px) {
+  .online-wrap .online-wrap-inner .callcenter-time p {
+    font-size: 1.2rem;
+  }
+} /*# sourceMappingURL=index.css.map */

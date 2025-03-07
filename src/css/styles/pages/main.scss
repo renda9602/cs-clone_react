@@ -1,0 +1,223 @@
+@use './../base/variables';
+@use './../base/mixins';
+@use './../base/fonts';
+@use './../base/reset';
+
+// 이미지 변수
+$ImgUrl: 'https://bodyfriend.speedgabia.com/img';
+
+// MAIN
+.mainWrap {
+  min-height: 100vh;
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    & > div {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    padding: 140px 0 0;
+    text-align: center;
+
+    h2 {
+      position: relative;
+      display: inline-block;
+      margin: 0px auto;
+      font-size: 6.4rem;
+      font-weight: 700;
+      text-align: center;
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: -80%;
+        left: -5%;
+        width: 300px;
+        height: 300px;
+        background: url(#{$ImgUrl}/cs/main/main_title_bg.png) no-repeat center;
+      }
+    }
+
+    h3 {
+      padding-bottom: 95px;
+      font-size: 3.2rem;
+    }
+  }
+
+  &__search {
+    display: flex;
+    justify-content: center;
+    padding: 75px 0px 25px;
+  }
+
+  //inputForm__input
+  .inputForm {
+    &__input {
+      margin: 0 auto;
+      position: relative;
+      box-shadow: rgba(0, 0, 0, 0.03) 0 14px 19px 0px;
+      height: 50px;
+      border: 1px solid #dae0e6;
+      width: 100%;
+      max-width: 750px;
+      border-radius: 40px;
+      cursor: pointer;
+      box-sizing: border-box;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 30px;
+        transform: translateY(-50%);
+        width: 22px;
+        height: 22px;
+        background: url(#{$ImgUrl}/cs/icon/icon_search.svg) center center
+          no-repeat;
+        overflow: hidden;
+      }
+
+      input {
+        padding: 15px 10px 15px 65px;
+        border-radius: 40px;
+        font-size: 2rem;
+      }
+
+      .input__del-btn {
+        position: absolute;
+        content: '';
+        top: 50%;
+        transform: translateY(-50%);
+        right: 30px;
+      }
+    }
+
+    // list
+    &__list {
+      display: none;
+      position: absolute;
+      top: 80px;
+      left: 0px;
+      width: 100%;
+      min-height: 420px;
+      border: 1px solid #dae0e6;
+      border-radius: 30px;
+      box-shadow: rgba(0, 0, 0, 0.03) 0px 14px 19px 0px;
+      background-color: #fff;
+      padding: 24px;
+      z-index: 10;
+      box-sizing: border-box;
+
+      .title {
+        display: flex;
+        font-size: 2rem;
+        font-weight: 700;
+
+        .btn-del {
+          margin-left: auto;
+          padding: 0;
+          border: none;
+          width: max-content;
+          color: #bbbcc8;
+          cursor: pointer;
+          background-color: transparent;
+        }
+      }
+
+      .list-item {
+        display: flex;
+        gap: 30px;
+        padding: 13px 16px;
+
+        a {
+          width: 100%;
+          font-size: 1.6rem;
+          color: #000;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+
+        .btn-del {
+          margin-left: auto;
+          background: url(#{$ImgUrl}/cs/icon/icon_delete_circle.svg) center
+            center no-repeat;
+          border: none;
+          margin: 0px;
+          width: 24px;
+          height: 24px;
+          min-width: auto;
+          cursor: pointer;
+        }
+      }
+
+      @at-root {
+        // 검색 클릭 시 활성화
+        .mainWrap__search--active {
+          .inputForm__input {
+            input {
+              padding: 15px 10px 15px 30px;
+            }
+
+            .input__del-btn {
+              display: inline;
+              width: 24px;
+              height: 24px;
+              background: url(#{$ImgUrl}/cs/icon/icon_del_nor_grey.svg) center
+                center / contain no-repeat;
+              cursor: pointer;
+            }
+
+            &::after {
+              display: none;
+            }
+          }
+
+          .inputForm__list {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .keyword {
+    margin-top: 25px;
+    flex-direction: column;
+    gap: 25px;
+
+    h3 {
+      margin: 0 auto 10px;
+      padding: 0 45px;
+      max-width: 650px;
+      width: 100%;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+
+      button {
+        margin-right: 0px;
+        font-size: 2rem;
+        color: #437ef7;
+        display: inline-block;
+        padding: 16px 20px;
+        border-radius: 30px;
+        background-color: #f5faff;
+      }
+    }
+  }
+
+  .scroll {
+    margin-top: 55px;
+  }
+}

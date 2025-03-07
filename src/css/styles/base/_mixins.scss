@@ -1,0 +1,28 @@
+// 이미지 변수
+$ImgUrl: 'https://bodyfriend.speedgabia.com/img';
+
+//width 최대 너비 지정
+@mixin maxWidth($max, $width) {
+  max-width: $max;
+  width: $width;
+}
+
+// select 커스텀
+@mixin selectForm($width, $height, $padding, $color) {
+  padding: $padding;
+  background: url(#{$ImgUrl}/cs/icon/arrow_black_down.svg) no-repeat
+    calc(100% - 10px);
+  background-color: #fff;
+  background-size: 20px;
+  border-color: #dae0e6;
+  border-radius: 8px;
+  border-style: solid;
+  font-size: 1.6rem;
+  color: $color;
+  -webkit-appearance: none; /* 크롬 화살표 없애기 */
+  -moz-appearance: none; /* 파이어폭스 화살표 없애기 */
+  appearance: none; /* 화살표 없애기 */
+  width: $width;
+  height: $height;
+  @content;
+}

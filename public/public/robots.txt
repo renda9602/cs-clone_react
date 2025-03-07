@@ -1,0 +1,17 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow: /service/service_result
+Disallow: /service/service_order_info
+Disallow: /customer
+Disallow: /member
+Disallow: /service/after
+Disallow: /product/product_delivery_info?step=delivery
+
+User-agent: Yeti
+
+Disallow: /service/service_result
+Disallow: /service/service_order_info
+Disallow: /customer
+Disallow: /member
+Disallow: /service/after
+Disallow: /product/product_delivery_info?step=delivery

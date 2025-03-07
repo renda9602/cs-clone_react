@@ -1,0 +1,34 @@
+/*notosans kr
+Thin 100
+Light 300
+Regular 400
+Medium 500
+Bold 700
+Black 900
+font-family: 'Noto Sans KR', sans-serif;
+*/
+/* bodyfriend (bodyfriend-L, bodyfriend-M, bodyfriend-B) */
+@font-face {
+  font-family: 'bodyfriendL';
+  font-weight: normal;
+  src: url('https://fonts.bodyfriend.co.kr/Bodyfriend/BodyFriend-L.woff2')
+      format('woff2'),
+    url('https://fonts.bodyfriend.co.kr/Bodyfriend/BodyFriend-L.woff')
+      format('woff');
+}
+@font-face {
+  font-family: 'bodyfriendM';
+  font-weight: normal;
+  src: url('https://fonts.bodyfriend.co.kr/Bodyfriend/BodyFriend-M.woff2')
+      format('woff2'),
+    url('https://fonts.bodyfriend.co.kr/Bodyfriend/BodyFriend-M.woff')
+      format('woff');
+}
+@font-face {
+  font-family: 'bodyfriendB';
+  font-weight: normal;
+  src: url('https://fonts.bodyfriend.co.kr/Bodyfriend/BodyFriend-B.woff2')
+      format('woff2'),
+    url('https://fonts.bodyfriend.co.kr/Bodyfriend/BodyFriend-B.woff')
+      format('woff');
+}
