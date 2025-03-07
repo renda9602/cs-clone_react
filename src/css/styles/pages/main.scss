@@ -8,7 +8,12 @@ $ImgUrl: 'https://bodyfriend.speedgabia.com/img';
 
 // MAIN
 .mainWrap {
+  @include mixins.maxWidth(1200px, 100%);
   min-height: 100vh;
+
+  section {
+    padding: 140px 30px 0;
+  }
 
   &__inner {
     position: relative;
@@ -20,7 +25,7 @@ $ImgUrl: 'https://bodyfriend.speedgabia.com/img';
   }
 
   &__title {
-    padding: 140px 0 0;
+    padding-bottom: 95px;
     text-align: center;
 
     h2 {
@@ -43,7 +48,6 @@ $ImgUrl: 'https://bodyfriend.speedgabia.com/img';
     }
 
     h3 {
-      padding-bottom: 95px;
       font-size: 3.2rem;
     }
   }
@@ -219,5 +223,116 @@ $ImgUrl: 'https://bodyfriend.speedgabia.com/img';
 
   .scroll {
     margin-top: 55px;
+  }
+
+  &__porductList {
+    display: flex;
+    justify-content: center;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      height: 221px;
+
+      li {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 225px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 2px;
+          height: 221px;
+          background: url(#{$ImgUrl}/cs/main/main_icon_border_v.png) no-repeat;
+          background-size: contain;
+        }
+
+        &:first-child {
+          &::after {
+            display: none;
+          }
+        }
+
+        p {
+          color: #000;
+          font-size: 2.2rem;
+        }
+      }
+    }
+  }
+
+  &__serviceLink {
+    ul {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+
+      > li {
+        width: 100%;
+      }
+    }
+
+    .service-title {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 24px 32px;
+      height: 187px;
+      border-radius: 10px;
+      color: #fff;
+      @include mixins.color_gradient_AtoB(180deg, #5c6a82, 0%, #272d37, 100%);
+
+      b {
+        font-size: 2.4rem;
+      }
+
+      span {
+        font-size: decimal(16px);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 32px;
+        left: 24px;
+        width: 48px;
+        height: 48px;
+        background: #fff;
+        border-radius: 100%;
+      }
+      &::before {
+        margin: 7px;
+        content: '';
+        position: absolute;
+        top: 32px;
+        left: 24px;
+        width: 32px;
+        height: 32px;
+        background-size: cover;
+        z-index: 1;
+      }
+
+      $iconNames: (
+        1: 'main_btm_icon_problem',
+        2: 'main_btm_icon_service',
+        3: 'main_btm_icon_product',
+      );
+
+      @each $index, $icon in $iconNames {
+        &::before(#{$index}) {
+          background: url(#{$ImgUrl}/cs/main/#{$icon}.svg) 0 0 no-repeat;
+          background-size: cover;
+        }
+      }
+    }
   }
 }

@@ -1,4 +1,7 @@
 import { ImgUrl } from '../hooks/useUrl';
+//데이터 연결
+import { MainProductMenu } from '../data/menuList';
+// css
 import './../css/styles/pages/main.scss';
 
 const MainPage = () => {
@@ -77,38 +80,84 @@ const MainPage = () => {
         <div className="mainWrap__title">
           <h3>제품별 문제 해결</h3>
         </div>
-        <div className="porductListWrap">
+        <div className="mainWrap__porductList">
           <ul>
-            {/* Link로 연결 */}
+            {/* Link로 연결  */}
+            {
+              //MainLinkList 데이터 연결
+              MainProductMenu.productProblemSolveList.map(
+                ({ tabName, iconName, href }) => {
+                  return (
+                    <li key={`${tabName}-${iconName}`}>
+                      <a href={`${href}`}>
+                        <img
+                          src={`${ImgUrl}/cs/main/main_icon_${iconName}.png`}
+                          alt={`${iconName}`}
+                          width={'113'}
+                        />
+                        <p>{tabName}</p>
+                      </a>
+                    </li>
+                  );
+                }
+              )
+            }
+          </ul>
+        </div>
+      </section>
+      <section>
+        <div className="mainWrap__serviceLink">
+          <ul>
             <li>
-              <a href="/product_guide?product=bf">
-                <img
-                  src={`${ImgUrl}/cs/main/main_icon_l.png`}
-                  alt="바디프랜드"
-                />
-                <span>바디프랜드</span>
-              </a>
+              <div className="service-title">
+                <b>문제 해결 방법</b>
+                <span>제품에 문제가 있다면 확인해 보세요</span>
+              </div>
+              <ul className="service-list">
+                <li>
+                  <a href="#">자주 묻는 질문</a>
+                </li>
+                <li>
+                  <a href="#">동영상 가이드</a>
+                </li>
+                <li>
+                  <a href="#">제품 설명서</a>
+                </li>
+              </ul>
             </li>
             <li>
-              <a href="/product_guide?product=l">
-                <img
-                  src={`${ImgUrl}/cs/main/main_icon_l.png`}
-                  alt="라클라우드"
-                />
-                <span>라클라우드</span>
-              </a>
+              <div className="service-title">
+                <b>문제 해결 방법</b>
+                <span>제품에 문제가 있다면 확인해 보세요</span>
+              </div>
+              <ul className="service-list">
+                <li>
+                  <a href="#">자주 묻는 질문</a>
+                </li>
+                <li>
+                  <a href="#">동영상 가이드</a>
+                </li>
+                <li>
+                  <a href="#">제품 설명서</a>
+                </li>
+              </ul>
             </li>
             <li>
-              <a href="/product_guide?product=w">
-                <img src={`${ImgUrl}/cs/main/main_icon_w.png`} alt="W정수기" />
-                <span>W정수기</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="" alt="" />
-                <span>기타제품</span>
-              </a>
+              <div className="service-title">
+                <b>문제 해결 방법</b>
+                <span>제품에 문제가 있다면 확인해 보세요</span>
+              </div>
+              <ul className="service-list">
+                <li>
+                  <a href="#">자주 묻는 질문</a>
+                </li>
+                <li>
+                  <a href="#">동영상 가이드</a>
+                </li>
+                <li>
+                  <a href="#">제품 설명서</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>

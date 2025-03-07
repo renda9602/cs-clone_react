@@ -26,3 +26,9 @@ $ImgUrl: 'https://bodyfriend.speedgabia.com/img';
   height: $height;
   @content;
 }
+
+//color gradient
+@mixin color_gradient_AtoB($deg, $color1, $A, $color2, $B) {
+  background: linear-gradient($deg, $color1 $A, $color2 $B);
+  //  @include color_gradient_AtoB(right, #ff0000, #00ff00, 0, 100);
+}
